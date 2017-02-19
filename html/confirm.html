@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>confirm</title>
+  <script type="text/javascript">
+  function rec(){
+    var mymessage= confirm ("你的性别是女士吗?")       ;
+    if(mymessage==true)
+    {
+    	document.write("你是女士!");
+    }
+    else
+    {
+        document.write("你是男士!");
+    }
+  }    
+  function con(){
+  var myscore=prompt("input your score",60);
+  if(myscore>=60)
+  {
+  document.write("good job!");
+  }
+  else
+  {
+  document.write("you need work hard!");
+  }
+  }
+  
+  function winopen()
+  {
+  window.open("http://www.imooc.com","_blank");
+  }
+  
+  function closewin()
+  {
+	window.close();
+  }
+  </script>
+  
+</head>
+<body>
+    <input name="button" type="button" onClick="rec()" value="点击我，弹出确认对话框" />
+	<input name="button" type="button" onClick="con()" value="分数确认" />
+	<input name="button" type="button" onClick="winopen()" value="新窗口中打开慕课网" />
+	<input name="button" type="button" onClick="closewin()" value="点击关闭窗口" />
+</body>
+</html>
