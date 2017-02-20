@@ -1,0 +1,32 @@
+<html>
+<head>
+
+<title>javascript diaplay</title>
+<!--<script src="js/alert.js"></script>-->
+
+<script type="text/javascript">
+	function hidetext()
+	{
+		var mychar= document.getElementById("con");
+		mychar.style.display="none";
+	}
+	
+	function showtext()
+	{
+		var mychar= document.getElementById("con");
+		mychar.style.display="block";
+	}
+</script>
+
+</head>
+<body>
+	
+		<p id="con">there is a story,long long away,there is two monks in the mountain.</p>
+		<form>
+			<input type="button" onclick="hidetext()" value="hide the text"/>
+			<input type="button" onclick="showtext()" value="show the text" />
+		</form>
+	
+</body>
+
+</html>

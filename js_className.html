@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>javascript classname</title>
+
+<style>
+body
+{
+	font-size:30px;
+}
+.one
+{
+	width:400px;
+	height:30px;
+	background:red;
+}
+
+.two
+{
+	font-size:20px;
+	color:blue;
+}
+</style>
+
+</head>
+
+<body>
+	
+	<p id="first">this is the first </p>
+	<input type="button" onclick="changeone()" value="change the first">
+	
+	<p id="second" class="one">this  is  the second</p>
+	<input type="button" onclick="changetwo()" value="change the second">
+	<script>
+	
+	function changeone()
+	{
+		var first=document.getElementById("first");
+		first.className="one";
+	}
+	function changetwo()
+	{
+		var second=document.getElementById("second");
+		second.className="two";
+	}
+	</script>
+</body>
+
+</html>
