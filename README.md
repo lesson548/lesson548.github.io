@@ -4,9 +4,9 @@
 ## html & css学习
 对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒子模型、选择器优先级、HTML5、CSS3
 
-行内元素有：a b span img input select
+行内元素有：`a b span img input select`
 
-块级元素有：div ul ol li dl dt dd h1 h2 h3 h4…p
+块级元素有：`div ul ol li dl dt dd h1 h2 h3 h4…p`
 
 ### CSS选择器
 
@@ -19,12 +19,24 @@
 7. 通配符选择器（ * ）
 8. 属性选择器（a[rel = "external"]）
 9. 伪类选择器（a:hover, li:nth-child）
+    
     
-    
+
+### CSS 手册
+[W3SCHOOL手册_CSS](http://www.w3school.com.cn/cssref/)
+
+[CSS参考手册](http://css.doyoe.com/)
+
 ## javascript学习
 
 数据类型、运算、对象、Function、继承、闭包、作用域、原型链、事件、RegExp、JSON、Ajax、
 DOM、BOM、内存泄漏、跨域、异步装载、模板引擎、前端MVC、路由、模块化、Canvas、ECMAScript 6、Nodejs
+
+[JavaScript 标准参考教程_阮一峰](http://javascript.ruanyifeng.com/)
+
+
+[W3SCHOOL手册_JAVASCRIPT](http://www.w3school.com.cn/js/index.asp)
+
 
 ### JSON
 JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。它是基于JavaScript的一个子集。
@@ -37,6 +49,12 @@ jQuery 是一个 JavaScript 库，jQuery是一个轻量级的"写的少，做的
 
 ### 引入jQuery
 
+**jQuery CDN引入**
+```
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+```
+
+**本地引入**
 ```
 <script src="jquery.js"></script>
 ```
@@ -48,7 +66,7 @@ $(document).ready(function(){
 });
 ```
 
-$() 是  $( document ).ready()简写
+`$()` 是  `$( document ).ready()`简写
 
 ### 简写实例1
 ```
@@ -62,9 +80,56 @@ $(function(){
 $( "#myId" ); // Note IDs must be unique per page.
 ```
 
+#### class 选择器
+```
+$( ".myClass" );
+```
+
+#### 元素选择器
+```
+$("div");
+```
+
+#### 匹配选择器
+```
+$("*"); //匹配所有元素,多用于结合上下文来搜索
+```
+
+#### 属性选择器
+```
+$( "input[name='first_name']" );
+```
+
+#### 参考手册
 
 [jQuery中文手册](http://www.gbtags.com/api/jquery/jquery-doc/index.html)
+
+
 [jQuery API 手册](http://caibaojian.com/jquery/)
+
+[jQuery 基本原理](http://docs.huihoo.com/jquery/jquery-fundamentals/zh-cn/index.html)
+
+
+
+## HTTP状态码
+```
+100  Continue   继续，一般在发送post请求时，已发送了http header之后服务端将返回此信息，表示确认，之后发送具体参数信息
+200  OK         正常返回信息
+201  Created    请求成功并且服务器创建了新的资源
+202  Accepted   服务器已接受请求，但尚未处理
+301  Moved Permanently  请求的网页已永久移动到新位置。
+302 Found       临时性重定向。
+303 See Other   临时性重定向，且总是使用 GET 请求新的 URI。
+304  Not Modified 自从上次请求后，请求的网页未修改过。
+
+400 Bad Request  服务器无法理解请求的格式，客户端不应当尝试再次使用相同的内容发起请求。
+401 Unauthorized 请求未授权。
+403 Forbidden   禁止访问。
+404 Not Found   找不到如何与 URI 相匹配的资源。
+
+500 Internal Server Error  最常见的服务器端错误。
+503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）。
+```
 
 
 ## 前端性能优化
