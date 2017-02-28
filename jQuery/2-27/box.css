@@ -1,0 +1,25 @@
+.box1{
+    width:100px;
+    height:120px;
+    border:1px solid #F00;
+    background-color:#00C;
+    margin-bottom: 10px;
+    padding-left:10px;
+    float:left;
+}
+
+.box2{
+    width:100px;
+    height:150px;
+    border:1px solid #00F;
+    background-color:darkseagreen;
+    padding-top:10px;
+    float:left;
+}
+.box3{
+    width:500px;
+    height:500px;
+    border:1px solid red;
+    background-color:gold;
+    clear:left;
+}
