@@ -142,3 +142,110 @@ body{
     padding-right:25px;
     border:1px solid #FFF;
 }
+
+.ad{
+    height:310px;
+    /*overflow:hidden;*/
+    clear:both;
+
+}
+.main{
+    height:250px;
+    background:#CCC;
+    margin-top:3px;
+}
+.news{
+    width:340px;
+    border:1px solid #6667e8;
+    background:white;
+}
+.course{
+    width:410px;
+    border:1px solid #cccccc;
+    margin:0 7px;
+    background:white;
+}
+.sidebar{
+    width:230px;
+    background: #cccccc;
+}
+.news,.course,.sidebar{
+    height:250px;
+    float:left;
+}
+.title{
+    height:40px;
+    border-bottom:3px solid #8e8e8e;
+}
+
+.title_word{
+    width:70%;
+    font-family: "微软雅黑";
+    font-size:18px;
+    font-weight:bold;
+    color:#786F66;
+    float:left;
+    line-height:35px;
+    padding-left:20px;
+}
+
+.title_more{
+    width:20%;
+    float:right;
+    line-height:35px;
+    color: #3f59ff;
+    text-decoration: none;
+    text-align:right;
+    padding-right:10px;
+
+}
+.space{
+    padding-top:10px;
+    line-height:16px;
+}
+
+.news_list li{
+    list-style-type:none;
+    background:url(../img/list.jpg) no-repeat;
+    padding-left:10px;
+    margin:8px;
+    border-bottom:1px dotted #af9dff;
+}
+
+.news_list a:link,.news_list a:visited   /*超链接初始状态和访问后的状态都要套用里面的样式*/
+{
+
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.92);
+}
+
+.news_list a:hover,.news_list a:active
+{
+    color: #5464ff;
+    text-decoration: none;
+}
+
+.course_pic{
+    height:120px;
+    margin-top:10px;
+    line-height:22px;
+
+}
+.course_pic img{
+    float:left;
+    margin:0 5px;
+}
+.course_type{
+    height:37px;
+    width:372px;
+    background:url(../img/product_type_bg.jpg) no-repeat;
+    margin:20px auto;
+}
+.course_type li{
+    list-style-type: none;
+    float:left;
+    line-height:37px;
+    margin:0 15px;
+    text-align: center;
+
+}
