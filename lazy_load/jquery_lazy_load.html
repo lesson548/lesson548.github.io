@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> jquery image lazy load </title>
+ 
+  <script src="jquery-3.1.1.min.js"></script>
+  <script src="jquery.lazyload.min.js"></script>
+  
+<!--懒加载-->
+  <script type="text/javascript"> 
+  $(function(){
+  $("img").lazyload();
+  })
+    
+</script> 
+
+ </head>
+
+ <body>
+  <img  data-original="1.jpg" src="grey.gif" width="640" heigh="480">
+  
+  <br>
+  <img data-original="2.jpg" src="grey.gif" width="640" heigh="480">
+  <br>
+
+  <img data-original="3.jpg" src="grey.gif" width="640" heigh="480">
+<br>
+  <img data-original="4.jpg" src="grey.gif" width="640" heigh="480">
+<br>
+  <img data-original="5.jpg" src="grey.gif" width="640" heigh="480">
+<br>
+
+ </body>
+</html>
