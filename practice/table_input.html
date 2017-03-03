@@ -10,7 +10,6 @@
     <script>
         $(function () {
             $(".del").click(function () {
-//                $(this).parent().remove();
                 $(this).parent("td").parent("tr").remove();
             });
 
@@ -21,7 +20,6 @@
                 $("table").append("<tr><td>" + abc + "</td><td>"+abc2+"</td><td><div class='del'>删除</div></td></tr>");
             })
             $(document).on("click",".del",function(e){
-         //       $(this).parent("tr").remove();
                 $(this).parent("td").parent("tr").remove();
             })
         })
