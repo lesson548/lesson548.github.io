@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>remove_table</title>
+
+    <script type="text/javascript" src="../jquery-3.1.1.js"></script>
+    <link href="table_input.css" type="text/css" rel="stylesheet">
+
+    <script>
+        $(function () {
+            $(".del").click(function () {
+//                $(this).parent().remove();
+                $(this).parent("td").parent("tr").remove();
+            });
+
+            $("#insert").click(function()
+            {
+                var abc = $("#add").val();
+                var abc2 = $("#add2").val();
+                $("table").append("<tr><td>" + abc + "</td><td>"+abc2+"</td><td><div class='del'>删除</div></td></tr>");
+            })
+            $(document).on("click",".del",function(e){
+         //       $(this).parent("tr").remove();
+                $(this).parent("td").parent("tr").remove();
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="left">
+    <p class="sign"><strong>SIGN&nbsp;&nbsp;UP</strong></p>
+    <input placeholder="请输入姓名" id="add" type="text" name="name"><br/><br/>
+    <br/>
+
+    <input placeholder="请输入号码" id="add2" type="text" name="name"><br/><br/>
+    <br/>
+
+    <button id="insert">点击添加</button>
+</div>
+
+<div class="right">
+    <p class="sign2"><strong>THE&nbsp;&nbsp;TABLE</strong></p>
+    <table border="1" class="player" cellspacing="0" cellpadding="0" >
+        <tr>
+            <th>姓名</th>
+            <th>号码</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>罗勇</td>
+            <td>328</td>
+            <td><div class="del">删除</div></td>
+        </tr>
+        <tr>
+            <td>薛俊</td>
+            <td>329</td>
+            <td><div class="del">删除</div></td>
+        </tr>
+        <tr>
+            <td>卫晓</td>
+            <td>338</td>
+            <td><div class="del">删除</div></td>
+        </tr>
+        <tr>
+            <td>老牛</td>
+            <td>339</td>
+            <td><div class="del">删除</div></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
