@@ -1,0 +1,127 @@
+
+.top_up{
+    width:1000px;
+    margin-left:170px;
+    height:60px;
+    background: #212121;
+    text-align:center;
+    line-height:60px;
+    font-size:24px;
+    letter-spacing:15px;//字间距
+}
+
+.word{
+    color: #df782f;
+}
+.top_down{
+    width:1000px;
+    margin-left:170px;
+    height:40px;
+    background: #323232;
+    margin-top:-16px;
+}
+
+.top_down li{
+    float:left;
+    width:180px;
+    list-style-type: none;
+    text-align:center;
+    line-height:40px;
+}
+.top_down a:link,.top_down a:visited   /*超链接初始状态和访问后的状态都要套用里面的样式*/
+{
+    color: rgb(34, 82, 255);
+    font-size:16px;
+    text-decoration: none;
+    font-family:"微软雅黑";
+
+}
+.top_down a:hover,.top_down a:active
+{
+    color: #ff922e;
+    text-decoration:none;
+}
+
+.main{
+    width:1000px;
+    height:448px;
+    text-align: center;
+    background:url("QQ20161031214748.png");
+    margin-left:170px;
+}
+
+.pic{
+    width:800px;
+    height:448px;
+}
+
+.center{
+    margin-top:-16px;
+}
+
+.word2{
+    padding:420px 100px;
+    text-align: center;
+}
+
+.right_bar{
+    width:190px;
+    height:448px;
+    background: #324548;
+    float:right;
+
+    margin-top:-877px;
+}
+
+.right_bar li{
+    float: left;
+    list-style-type: none;
+    width:100px;
+    text-align:center;
+    line-height:70px;
+    color:#FF922E;
+}
+
+.right_bar a:link,.right_bar a:visited   /*超链接初始状态和访问后的状态都要套用里面的样式*/
+{
+    color: #df782f;
+    font-size:16px;
+    text-decoration: none;
+    font-family:"微软雅黑";
+
+}
+
+.right_bar a:hover,.right_bar a:active
+{
+    color: #fbf2fd;
+    text-decoration: none;
+}
+
+
+.copyright{
+    width:100%;
+    height:100px;
+    background: #E8E8E8;
+    margin-top:10px;
+}
+.copyright_content{
+    width:1000px;
+    margin:0 auto;
+    padding-top:10px;
+}
+
+.copyright_content li{
+    list-style-type:none;
+    float:left;
+    width:150px;
+    text-align:center;
+    background:url(../img/line.png) no-repeat right center;
+    line-height:27px;
+    font-family:"微软雅黑";
+}
+
+.copyright_content a{
+    text-decoration: none;
+    color:#999;
+    font-size:18px;
+}

@@ -14,7 +14,7 @@ $(function(){
     /*
     $('div').width(function(index,width){
         return width-500+'px';                 //可以不加单位，会智能添加，但加上会更加清晰
-    });
+    }); 
 */
     // alert( $('div').height());            //高度方法类似
 
