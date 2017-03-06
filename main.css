@@ -2,16 +2,17 @@
 .top_up{
     width:1000px;
     margin-left:170px;
-    height:60px;
-    background: #212121;
+    height:75px;
+    /*background: #212121;*/
     text-align:center;
     line-height:60px;
     font-size:24px;
-    letter-spacing:15px;//字间距
+    letter-spacing:15px;      /*字间距*/
+    background:url("top.png");
 }
 
 .word{
-    color: #df782f;
+    color: #417fdf;
 }
 .top_down{
     width:1000px;
@@ -19,18 +20,19 @@
     height:40px;
     background: #323232;
     margin-top:-16px;
+    background:url("top_down .png");
 }
-
-.top_down li{
+.top_down div{
     float:left;
-    width:180px;
+    width:198px;
     list-style-type: none;
     text-align:center;
-    line-height:40px;
+    line-height:39px;
+    border:1px solid #fbf2fd;
 }
 .top_down a:link,.top_down a:visited   /*超链接初始状态和访问后的状态都要套用里面的样式*/
 {
-    color: rgb(34, 82, 255);
+    color: rgb(2, 2, 1);
     font-size:16px;
     text-decoration: none;
     font-family:"微软雅黑";
@@ -42,49 +44,31 @@
     text-decoration:none;
 }
 
+
 .main{
     width:1000px;
     height:448px;
     text-align: center;
-    background:url("QQ20161031214748.png");
+    /*background:url("QQ20161031214748.png");*/
     margin-left:170px;
 }
 
-.pic{
-    width:800px;
-    height:448px;
-}
 
 .center{
-    margin-top:-16px;
-}
-
-.word2{
-    padding:420px 100px;
-    text-align: center;
+    margin-top:0px;
+    float:right;
 }
 
 .right_bar{
-    width:190px;
+    width:199px;
     height:448px;
-    background: #324548;
-    float:right;
-
-    margin-top:-877px;
-}
-
-.right_bar li{
-    float: left;
-    list-style-type: none;
-    width:100px;
-    text-align:center;
-    line-height:70px;
-    color:#FF922E;
+    /*background: #324548;*/
+    float:left;
 }
 
 .right_bar a:link,.right_bar a:visited   /*超链接初始状态和访问后的状态都要套用里面的样式*/
 {
-    color: #df782f;
+    color: #0c0f0a;
     font-size:16px;
     text-decoration: none;
     font-family:"微软雅黑";
@@ -97,31 +81,52 @@
     text-decoration: none;
 }
 
+.left1,.left2,.left3,.left4,.left5,.left6{
+    width:200px;
+    height:75px;
+    line-height:75px;
+    clear: both;
+}
+.left1,.left3,.left5 {
+    background: #7d9af6;
+}
+.left2,.left4,.left6{
+    background: #7180ff;
+}
 
 .copyright{
-    width:100%;
-    height:100px;
-    background: #E8E8E8;
-    margin-top:10px;
-}
-.copyright_content{
     width:1000px;
-    margin:0 auto;
-    padding-top:10px;
+    height:70px;
+    background:url("666.png");
+    margin-left:170px;
+    margin-top:-14px;
 }
 
-.copyright_content li{
+.copyright li{
     list-style-type:none;
     float:left;
-    width:150px;
+    width:180px;
     text-align:center;
-    background:url(../img/line.png) no-repeat right center;
-    line-height:27px;
-    font-family:"微软雅黑";
+    line-height:70px;
 }
 
-.copyright_content a{
+.copyright a{
     text-decoration: none;
-    color:#999;
+    color: rgba(24, 24, 24, 0.82);
     font-size:18px;
+}
+
+.copyright a:link,.copyright a:visited   /*超链接初始状态和访问后的状态都要套用里面的样式*/
+{
+    color: #1b1b1b;
+    font-size:16px;
+    text-decoration: none;
+    font-family:"微软雅黑";
+
+}
+
+.copyright a:hover,.copyright a:active
+{
+    color: #417fdf;
+    text-decoration: none;
 }
