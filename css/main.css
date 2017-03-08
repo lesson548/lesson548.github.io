@@ -8,7 +8,7 @@
     line-height:60px;
     font-size:24px;
     letter-spacing:15px;      /*字间距*/
-    background:url("top.png");
+    background:url("../img/top.png");
 }
 
 .word{
@@ -20,7 +20,7 @@
     height:40px;
     background: #323232;
     margin-top:-16px;
-    background:url("top_down .png");
+    background:url("../img/top_down .png");
 }
 .top_down div{
     float:left;
@@ -97,7 +97,7 @@
 .copyright{
     width:1000px;
     height:70px;
-    background:url("666.png");
+    background:url("../img/666.png");
     margin-left:170px;
     margin-top:-14px;
 }
