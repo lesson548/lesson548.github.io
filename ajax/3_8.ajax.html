@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax初体验</title>
+    <script src="../jQuery/jquery-3.1.1.js"></script>
+
+    <script>
+//        window.onload = function () {
+//
+//        }
+//        var oBtn = document.getElementById('btn');
+//        oBtn.onclick = function () {
+//            var xhr = new XMLHttpRequest();
+//            xhr.open('get','http://ip.taobao.com/service/getIpInfo.php?ip=121.80.78.80',true);
+//            xhr.send();
+//
+//            xhr.onreadystatechange = function () {
+//                if(xhr.readyState == 4){
+//                    alert(xhr.responseText);
+//                }
+//            }
+$(function () {
+    $('#btn').click(function () {
+        $.ajax({
+            type: "get",
+            url: "http://ip.taobao.com/service/getIpInfo.php?ip=121.80.78.80",
+            data: "",
+            success: function(msg){
+               console.log(msg);
+            }
+        });
+    })
+})
+
+
+//        }
+    </script>
+</head>
+<body>
+
+<input type="button" value="按钮" id="btn"/>
+
+</body>
+</html>
