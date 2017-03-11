@@ -3,43 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>ajax初体验</title>
-    <script src="../jQuery/jquery-3.1.1.js"></script>
-
+    <script src="jquery-3.1.1.js"></script>
     <script>
-//        window.onload = function () {
-//
-//        }
-//        var oBtn = document.getElementById('btn');
-//        oBtn.onclick = function () {
-//            var xhr = new XMLHttpRequest();
-//            xhr.open('get','http://ip.taobao.com/service/getIpInfo.php?ip=121.80.78.80',true);
-//            xhr.send();
-//
-//            xhr.onreadystatechange = function () {
-//                if(xhr.readyState == 4){
-//                    alert(xhr.responseText);
-//                }
-//            }
-$(function () {
-    $('#btn').click(function () {
-        $.ajax({
-            type: "get",
-            url: "http://ip.taobao.com/service/getIpInfo.php?ip=121.80.78.80",
-            data: "",
-            success: function(msg){
-               console.log(msg);
-            }
+
+        $(function(){
+            $("#btn").click(function(){
+                var xhr = new XMLHttpRequest();
+                xhr.open('get','data.php',true);
+                xhr.send();
+
+
+
+                xhr.onreadystatechange = function () {
+                    if(xhr.readyState == 4){
+                        console.log(xhr.responseText);
+                        var obj = JSON.parse(xhr.responseText);
+
+                        //	$(document).on("click",".del",function(){
+                        //	$(this).parent("tr").remove();
+                        //	});
+
+                        $("table").append("<tr><th>状态</th><th>信息</th></tr> <tr><td>"+obj.style+"</td><td>"+obj.Message+"</td><tr>");
+
+                    }
+                }
+
+            });
+
         });
-    })
-})
 
 
-//        }
+
     </script>
+
+    <style>
+        .tab{
+            border:1px solid blue;
+        }
+    </style>
 </head>
 <body>
 
 <input type="button" value="按钮" id="btn"/>
+
+<table class="tab">
+    <tr>
+        <th>状态</th>
+        <th class="del">信息</th>
+    </tr>
+    <tr>
+        <td>ahahah</td>
+        <td class="del">ddd</td>
+    </tr>
+</table>
 
 </body>
 </html>
