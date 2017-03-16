@@ -1,0 +1,69 @@
+#all{
+    background:url("../img/show_3_16.png");
+    width:500px;
+    height:250px;
+    margin:0 auto;
+}
+
+.top_word{
+    width:100px;
+    padding:60px 200px 0;
+    color: #232aff;
+    line-height:15px;
+    font-size:15px;
+}
+
+.middle_word{
+    width:250px;
+    padding:0 125px;
+    font-size:25px;
+    line-height:25px;
+    vertical-align: middle;
+    color: #232aff;
+    margin-top:-5px;
+}
+
+.money{
+    width:100px;
+    padding-left:200px;
+    font-size:15px;
+    color: #1b1b1b;
+    margin-top:-10px;
+
+}
+
+.press{
+    width:300px;
+    padding-left:135px;
+    line-height:50px;
+}
+
+.press1{
+    width:100px;
+    height:35px;
+    color: #1b1b1b;
+    background: #f0f4ff;
+    border:0;
+}
+
+.press2{
+    width:100px;
+    height:35px;
+    color: #1b1b1b;
+    background: #f0f4ff;
+    border:0;
+}
+
+.press input :link,.press input:visited   /*超链接初始状态和访问后的状态都要套用里面的样式*/
+{
+    background: #f0f4ff;
+    font-size:16px;
+    text-decoration: none;
+    font-family:"微软雅黑";
+
+}
+.press input:hover,.press1 input:active
+{
+    background: #ff5c1b;
+    text-decoration:none;
+}
