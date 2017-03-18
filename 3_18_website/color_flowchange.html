@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渐变</title>
+
+    <style>
+        #div1{
+            width:200px;
+            height:200px;
+            border:1px solid #333;
+            background: -webkit-linear-gradient(top left,red,yellow); /*-webkit- 是chrome浏览器的渐变前缀*/
+            background:-moz-linear-gradient(top, #FFFFFF, #f8f8f8);   /*-moz- 火狐浏览器*/
+            background:-ms-linear-gradient(top, #FFFFFF, #f8f8f8);    /*-ms- ie浏览器*/
+            -ms-filter:"progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#FFFFFF, endColorstr=#f8f8f8)";
+            /*-ms-filter : ie8 ie9*/+background:#f9f9f9;/*ie6 ie7设置固定不渐变背景*/
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="div1"></div>
+
+</body>
+</html>
