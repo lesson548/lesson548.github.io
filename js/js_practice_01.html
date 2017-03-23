@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js入手小练习</title>
+
+    <style>
+
+        .div1{
+            width:460px;
+            height:250px;
+            border:3px solid #666;
+            background: #ea7a7a;
+            margin-top:30px;
+        }
+        .word{
+            font-size:30px;
+            color:#3f59ff;
+
+        }
+        .btn{
+            border:0;
+            width:100px;
+            height:40px;
+            background: #ff5c1b;
+            font-size:15px;
+            font-family: "微软雅黑";
+            font-weight:bold;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<a class="word">请为下面的图形设置样式：</a>
+<input id="btn1" class="btn" type="button" value="点击设置"/>
+<div class="div1"></div>
+
+<script>
+    window.onload = function () {
+        var Btn = document.getElementById('btn1');
+
+        Btn.onclick = out;
+        function out() {
+
+            alert();   //修改alert内容并实现点击效果
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

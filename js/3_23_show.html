@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js_show & hide</title>
+
+    <style>
+
+        .mid{
+            margin-top:200px;
+        }
+        #hit{
+            width:200px;
+            height:200px;
+            background:#ea7a7a;
+            margin:0 auto;
+
+            text-align: center;
+            line-height:200px;
+            display:none;
+        }
+
+        .word{
+            font-size:24px;
+            color:#3f59ff;
+            text-decoration: none;
+        }
+        #hit a:hover{
+            text-decoration:none;
+            color: #77ff86;
+        }
+
+        .but{
+            width:200px;
+            height:100px;
+            margin:0 auto;
+            margin-top:20px;
+        }
+        #show_btn{
+            width:80px;
+            height:30px;
+            float:left;
+        }
+        #hid_btn{
+            width:80px;
+            height:30px;
+            float:right;
+        }
+    </style>
+
+</head>
+<body>
+
+<script>
+    window.onload = function () {
+        var Btn1=document.getElementById('hid_btn');
+        var Div=document.getElementById('hit');
+        var Btn2 = document.getElementById('show_btn');
+
+        Btn1.onclick = hidden;
+        Btn2.onclick = show;
+        function hidden() {
+            Div.style.display = 'none';
+        }
+        function show() {
+            Div.style.display = 'block';
+        }
+
+    }
+
+
+</script>
+<div class="mid">
+    <div id="hit"><a href="#" class="word">Don't hit me</a></div>
+    <div class="but">
+        <input id="show_btn" type="button" value="显示"/>
+        <input id="hid_btn" type="button" value="隐藏"/>
+    </div>
+</div>
+
+
+</body>
+</html>
