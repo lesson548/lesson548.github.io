@@ -6,47 +6,202 @@
 
     <style>
 
+        input{
+            width:35px;
+            height:35px;
+        }
+        .divleft{
+        }
         .div1{
-            width:460px;
-            height:250px;
+            width:100px;
+            height:100px;
             border:3px solid #666;
-            background: #ea7a7a;
-            margin-top:30px;
+            margin-top:10px;
+            /*background:red;*/
         }
         .word{
             font-size:30px;
             color:#3f59ff;
-
         }
         .btn{
-            border:0;
             width:100px;
             height:40px;
             background: #ff5c1b;
             font-size:15px;
-            font-family: "微软雅黑";
             font-weight:bold;
             color: #ffffff;
         }
+        #bigdiv{
+            width:300px;
+            height:190px;
+            border:20px solid #72798e;
+            display: none;
+            margin:50px 450px;
+        }
+        .bg{
+            margin:10px 0 10px 30px;
+        }
+        .wid{
+            margin:0 0 10px 30px;
+        }
+        .hei{
+            margin:0 0 10px 30px;
+        }
+        .butt{
+            margin-top:0;
+            text-align: center;
+        }
+        .butt input{
+            width:60px;
+            height:30px;
+            background:#3f59ff;
+            color:white;
+        }
+        .redbut{
+            background:#ea7a7a;
+            color: #ffffff;
+        }
+        .yellowbut{
+            background:#d49100;
+            color: #ffffff;
+        }
+        .bluebut{
+            background:#3f59ff;
+            color: #ffffff;
+        }
+
+        .wid input:hover,.hei input:hover{
+            background: #ff5c1b;
+        }
+        .redbut:hover{
+            background:red;
+        }
+        .yellowbut:hover{
+            background:yellow;
+        }
+        .bluebut:hover{
+            background:blue;
+        }
+
     </style>
 </head>
 <body>
 
 <a class="word">请为下面的图形设置样式：</a>
-<input id="btn1" class="btn" type="button" value="点击设置"/>
-<div class="div1"></div>
+<input class="btn" type="submit" value="点击设置" onclick="javascript:showDiv()"/>
 
-<script>
-    window.onload = function () {
-        var Btn = document.getElementById('btn1');
+<div id="div1" class="div1">
 
-        Btn.onclick = out;
-        function out() {
+    </div>
 
-            alert();   //修改alert内容并实现点击效果
-        }
+<div id="bigdiv">
+
+        <div class="bg">
+            请选择背景色&nbsp;：
+            <input id="redbut" class="redbut" type="button" value="红"  />
+            <input id="yellowbut" class="yellowbut" type="button" value="黄" />
+            <input id="bluebut" class="bluebut" type="button" value="蓝" />
+        </div>
+
+        <div class="wid">
+            请选择宽（px）:
+            <input id="widtwo" type="button" value="200" />
+            <input id="widthree" type="button" value="300" />
+            <input id="widfour" type="button" value="400" />
+        </div>
+        <div class="hei">
+            请选择高（px）:
+            <input id="heitwo" type="button" value="200" />
+            <input id="heithree" type="button" value="300" />
+            <input id="heifour" type="button" value="400" />
+        </div>
+        <div class="butt">
+            <input id="cover" type="button" value="恢复" />
+            <input id="insure" type="button" value="确定" />
+        </div>
+    </div>
+
+<script type="text/javascript">
+
+    function showDiv(){
+        document.getElementById('bigdiv').style.display = 'block';
     }
 
+
+
+    var Div1 = document.getElementById('div1');
+    var red = document.getElementById('redbut');
+    var yellow = document.getElementById('yellowbut');
+    var blue = document.getElementById('bluebut');
+
+    red.onclick = changered;
+    function changered() {
+        Div1.style.background = 'red';
+        }
+        yellow.onclick = changeyel;
+        function changeyel(){
+            console.log('yellow');
+            Div1.style.background = 'yellow';
+        }
+
+        blue.onclick = changeblue;
+        function changeblue() {
+            Div1.style.background = 'blue';
+        }
+
+        var two = document.getElementById('widtwo');
+        var three = document.getElementById('widthree');
+        var four = document.getElementById('widfour');
+
+        two.onclick = changewid2;
+        function changewid2(){
+            console.log('change200');
+            Div1.style.width = '200px';
+        }
+
+        three.onclick = changewid3;
+        function changewid3() {
+            Div1.style.width = '300px';
+        }
+
+        four.onclick = changewid4;
+        function changewid4() {
+            Div1.style.width = '400px';
+        }
+
+        var two2 = document.getElementById('heitwo');
+        var three2 = document.getElementById('heithree');
+        var four2 = document.getElementById('heifour');
+
+        two2.onclick = changehei2;
+        function changehei2(){
+            Div1.style.height = '200px';
+        }
+
+        three2.onclick = changehei3;
+        function changehei3() {
+            Div1.style.height = '300px';
+        }
+
+        four2.onclick = changehei4;
+        function changehei4() {
+            Div1.style.height = '400px';
+        }
+
+        var Cover = document.getElementById('cover');
+        Cover.onclick = changecover;
+        function changecover() {
+            Div1.style.display = 'block';
+            Div1.style.width = '100px';
+            Div1.style.height = '100px';
+            Div1.style.background = '#fff';
+        }
+
+        var Insure = document.getElementById('insure');
+        Insure.onclick = changeinsure;
+        function changeinsure() {
+            document.getElementById('bigdiv').style.display = 'none';
+        }
 
 </script>
 
