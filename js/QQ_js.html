@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QQ-show</title>
+
+    <style>
+        ul,h2{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style:none;
+        }
+        #list{
+            margin:0 auto;
+            width:200px;
+            height:30px;
+        }
+        #list .active{
+            background:url("../img/ico2.gif") no-repeat 5px #ae91df;
+            color: #000000;
+        }
+        #list ul{
+            display:none;
+        }
+        .lis{
+            border:1px solid #6e6e6e;
+        }
+        .lis ul li{
+            text-align: center;
+            line-height:25px;
+            border-bottom: 1px solid #6e6e6e;
+
+        }
+        #list li h2{
+            text-align: center;
+            background:url("../img/ico1.gif") no-repeat 5px center #77ff86;
+            color: #000000;
+            height:30px;
+            line-height:30px;
+
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var oUI = document.getElementById('list');
+            var aH2 = oUI.getElementsByTagName('h2');
+            var aUI = oUI.getElementsByTagName('ul');
+
+
+        }
+    </script>
+
+</head>
+<body>
+
+<ul id="list">
+    <li class="lis">
+        <h2 /*class="active"*/>我的好友</h2>
+        <ul>
+            <li>狗蛋</li>
+            <li>老牛</li>
+            <li>小芳</li>
+            <li>娃娃</li>
+        </ul>
+    </li>
+
+    <li class="lis">
+        <h2>黑名单</h2>
+        <ul>
+            <li>黑乎乎</li>
+            <li>鸽子王</li>
+            <li>赵四艳</li>
+            <li>狗蛋蛋</li>
+        </ul>
+    </li>
+
+    <li class="lis">
+        <h2>我的群组</h2>
+        <ul>
+            <li>前端</li>
+            <li>跑步</li>
+            <li>书法</li>
+            <li>街舞</li>
+        </ul>
+    </li>
+</ul>
+
+
+</body>
+</html>
