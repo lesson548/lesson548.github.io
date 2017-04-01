@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒数执行</title>
+    <style>
+        #input1{
+            width:200px;
+            height:33px;
+            line-height:30px;
+        }
+        #input2,#input3{
+            width:100px;
+            height:40px;
+        }
+        .div1{
+            margin:100px 0 0 500px;
+        }
+        .down{
+            margin-top:20px;
+        }
+    </style>
+    <script src="../jQuery/jquery-3.1.1.js"></script>
+</head>
+<body>
+<div class="div1">
+    <p>输入延迟执行时间（单位：秒）</p>
+    <input id="input1" type="text" value="0"/>
+    <div class="down">
+
+        <input id="input2" type="button" value="开始"/>
+        <input id="input3" type="button" value="停止" />
+    </div>
+</div>
+
+<script>
+
+    var oInput1 = document.getElementById('input1');
+    var oInput2 = document.getElementById('input2');
+    var oInput3 = document.getElementById('input3');
+    var a;
+
+    /*
+    document.onkeydown = function (event) {
+        var e = event || window.event || arguments.callee.caller.arguments[0];
+        if (e && e.keyCode == 13) {
+            checkLogin();
+        }
+    };
+    */
+
+    $(function () {
+        $('input').keypress(function () {
+            $('#input2').val('开始');
+        });
+    });
+
+    oInput3.onclick = function () {
+        clearInterval(oInput1.timer);
+        $('#input2').val('继续');
+    };
+
+    oInput2.onclick = function () {
+        a = $('#input1').val();
+        $('#input2').val(a);
+        clearInterval(oInput1.timer);
+        if(a <= 0)
+        {
+
+        }
+        else{
+            oInput1.timer = setInterval(function () {
+
+                a=a-1;
+                $('#input2').val(a);
+
+                $('#input1').val($('#input2').val());
+
+                console.log(a);
+                if(a == 0){
+                    $('#input2').val(0);
+                    clearInterval(oInput1.timer);
+                    $('#input2').val('倒计时结束');
+
+                }
+            }, 1000);
+        }
+    }
+</script>
+
+</body>
+</html>
