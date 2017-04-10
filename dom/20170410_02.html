@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>offsetParents</title>
+    <style>
+        div{
+            padding:100px;
+        }
+        #div1{
+            background: #ae91df;
+            position: relative;
+        }
+        #div2 {
+            background: #a7df81;
+            position: relative;
+        }
+        #div3{
+            background: #7c96f6;
+            position: relative;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="div1">
+    <div id="div2">
+        <div id="div3"></div>
+    </div>
+</div>
+
+<script>
+    var div3 = document.getElementById('div3');
+
+    console.log(div3.offsetParent);
+
+</script>
+
+</body>
+</html>
