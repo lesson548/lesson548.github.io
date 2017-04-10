@@ -38,7 +38,7 @@
 
 </head>
 <body>
-
+<input type="button" id="btn" value="hit me"/>
 <div id="div1">
     <div id="div2">
         <div id="div3"></div>
@@ -46,12 +46,34 @@
 </div>
 
 <script>
-    var div3 = document.getElementById('div3');
+    window.onload = function () {
+        var div3 = document.getElementById('div3');
 
 //    console.log(div3.offsetParent);   //最近的有定位的祖先节点 若无 默认为body 父子级均需定位
 
-    console.log(div3.offsetLeft);
+//    console.log(div3.offsetLeft);   //左外边框到有父级定位的左内边框的距离
 
+        var btn = document.getElementById('btn1');
+
+    };
+
+    btn.onclick = function () {
+
+//        var left = 0;
+//        var elem = div3;
+//
+//        while(elem){
+//            left=left+elem.offsetLeft;
+//            console.log(left);
+//            elem=elem.offsetParent;
+//            console.log(elem);
+//        }
+
+        //    getBoundingClientRect(返回值为一个对象)：获取某个元素的信息（高版本：left,top,bottom,rigit,width,height）
+//    注意：获取的值是会根据滚动条变化的。
+        div3.style.left = -div3.getBoundingClientRect().left+'px';
+        console.log(div3.style.left);
+    }
 
 </script>
 
