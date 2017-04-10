@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点小应用</title>
+
+    <style>
+        ul{
+            list-style:none;
+        }
+        ul li{
+            width:150px;
+            height:40px;
+            background: #b6ccf6;
+            text-align: center;
+            line-height:40px;
+            color: #FFF;
+            margin:1px;
+        }
+        .first,.last{
+            background: #72798e;
+        }
+
+        ul .focus{
+            width:154px;
+            height:42px;
+            background: #7180ff;
+            font-size:22px;
+        }
+        ul .side{
+            background: rgba(174, 145, 223, 0.63);
+        }
+        ul .head{
+            background: #ff9900;
+        }
+        ul .none{
+            background: #72798e;
+            width:150px;
+            height:40px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<ul id="all">
+    <li class="first">小疯队</li>
+    <li>黑乎乎</li>
+    <li>大牛哥</li>
+    <li>小芳芳</li>
+    <li>大骗子</li>
+    <li>狗蛋蛋</li>
+    <li>赵大西</li>
+    <li>静宝鸽</li>
+    <li>晴天娃</li>
+    <li class="last">藏宝图</li>
+</ul>
+
+<script>
+    var ul = document.getElementById('all');
+    var li = ul.children;
+    var first = ul.firstElementChild;
+    var last = ul.lastElementChild;
+
+
+    for(var i=0;i<li.length;i++){
+        li[i].onmouseover = function () {
+            if(this == first || this == last){
+                this.className = 'head';
+            }
+            else{
+                this.className = 'focus';
+                this.previousElementSibling.className = 'side';
+                this.nextElementSibling.className = 'side';
+                first.className = 'none';
+                last.className = 'none';
+            }
+        };
+        li[i].onmouseout = function () {
+            for(var i=0;i<li.length;i++){
+                li[i].className = '';
+                }
+            first.className = 'none';
+            last.className = 'none';
+            }
+
+    }
+
+</script>
+
+</body>
+</html>
