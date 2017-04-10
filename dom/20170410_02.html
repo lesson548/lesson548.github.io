@@ -5,19 +5,33 @@
     <title>offsetParents</title>
     <style>
         div{
-            padding:100px;
+            /*padding:100px;*/
+            padding:0;
         }
         #div1{
             background: #ae91df;
             position: relative;
+            width:300px;
+            height:300px;
+            position:relative;
+            margin-left:100px;
         }
         #div2 {
             background: #a7df81;
             position: relative;
+            width:200px;
+            height:200px;
+            position: relative;
+            margin-left:50px;
+
         }
         #div3{
             background: #7c96f6;
             position: relative;
+            width:100px;
+            height:100px;
+            position:relative;
+            margin-left:50px;
         }
 
     </style>
@@ -34,7 +48,10 @@
 <script>
     var div3 = document.getElementById('div3');
 
-    console.log(div3.offsetParent);
+//    console.log(div3.offsetParent);   //最近的有定位的祖先节点 若无 默认为body 父子级均需定位
+
+    console.log(div3.offsetLeft);
+
 
 </script>
 
