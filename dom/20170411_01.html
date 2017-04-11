@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>元素属性操作</title>
+</head>
+
+<body>
+
+<img src="../img/QQ20170306162146.png" id="img"/>
+<div id="div1"></div>
+<script>
+    var div = document.getElementById('div1');
+
+    div.setAttribute('index', '3');
+    //    alert(div.getAttribute('index'));  //设置元素的行间属性
+
+    //    alert(div.getAttribute('id'));   //获取元素行间的属性
+
+    //    div.removeAttribute('index');    //删除元素的行间属性
+
+//    console.log(img.src);
+//    console.log(img.getAttribute('src'));  //获取src  href 等的相对地址
+
+    if(img.getAttribute('src') == '../img/QQ20170306162146.png'){
+        alert('真');
+    }
+    else{
+        alert('假');
+    }
+
+
+
+
+</script>
+</body>
+</html>
