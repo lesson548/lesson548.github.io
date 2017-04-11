@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取宽高</title>
+    <style>
+        #div{
+            width:300px;
+            height:300px;
+            background: lightgreen;
+            border:10px solid #3f59ff;
+            padding:10px;
+
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<div id="div">
+
+    <script>
+
+        var div = document.getElementById('div');
+//        console.log(div.clientWidth);               //获取元素宽高 不计算边框 div.clientHeight
+//        console.log(div.offsetWidth);                //获取元素宽高 计算边框 div.offsetHeight
+
+//        console.log(document.documentElement.clientWidth);
+//        console.log(document.documentElement.clientHeight);     //可视区高度
+
+        var clientWid = document.documentElement.clientWidth;
+        var divW = div.offsetWidth;
+
+        div.style.left = (clientWid - divW)/2+'px';         //不知道div宽度情况下左右居中
+
+        var clientHei = document.documentElement.clientHeight;
+        var divH = div.offsetHeight;
+
+        div.style.top = (clientHei - divH)/2+'px';         //不知道div宽度情况上下居中
+
+    </script>
+
+</div>
+
+</body>
+</html>
