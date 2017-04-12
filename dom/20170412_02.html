@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建元素</title>
+
+    <style>
+        #div1{
+            width:100px;
+            height:100px;
+            background: red;
+        }
+        #div2{
+            width:100px;
+            height:100px;
+            background: green;
+        }
+    </style>
+
+</head>
+<body>
+
+<input type="button" id="btn" value="点击克隆" />
+
+<div id="box">
+    <div id="div1"></div>
+    <hr id="hr">
+    <div id="div2">
+        <p>biubiu~</p>
+    </div>
+</div>
+
+
+<script>
+
+    var btn = document.getElementById('btn');
+    var ul = document.getElementById('ul');
+    var div1 = document.getElementById('div1');
+    var hr = document.getElementById('hr');
+    var div2 = document.getElementById('div2');
+    var box = document.getElementById('box');
+
+
+    btn.onclick = function () {
+//        box.replaceChild(div2, div1);        //替换 div1被div2替换 剪贴替换
+        var cElement = div2.cloneNode(true);
+        box.insertBefore(cElement,hr);
+
+
+    }
+
+
+</script>
+
+</body>
+</html>
