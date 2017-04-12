@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建元素</title>
+
+</head>
+<body>
+
+<input type="button" id="btn" value="点击添加" />
+
+<ul id="ul">
+</ul>
+
+<script>
+
+    var btn = document.getElementById('btn');
+    var ul = document.getElementById('ul');
+
+    var html = '';                       //字符串拼接操作
+    var num = 0;
+    btn.onclick = function () {
+        num++;
+        html+='<li>'+num+'</li>';
+
+        ul.innerHTML = html;
+    }
+
+
+</script>
+
+</body>
+</html>
