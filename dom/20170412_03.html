@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <style>
+        th{
+            width:80px;
+            height:40px;
+        }
+    </style>
+</head>
+<body>
+<table border="" id="box">
+    <thead id="thead">
+        <tr>
+            <th>表头1</th>
+            <th>表头2</th>
+            <th>表头3</th>
+            <th>表头4</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>内容1</th>
+            <th>内容2</th>
+            <th>内容3</th>
+            <th>内容4</th>
+        </tr>
+        <tr>
+            <th>内容1</th>
+            <th>内容2</th>
+            <th>内容3</th>
+            <th>内容4</th>
+        </tr>
+    </tbody>
+    <tbody>
+    <tr>
+        <th>内容1</th>
+        <th>内容2</th>
+        <th>内容3</th>
+        <th>内容4</th>
+    </tr>
+    <tr>
+        <th>内容1</th>
+        <th>内容2</th>
+        <th>内容3</th>
+        <th>内容4</th>
+    </tr>
+    </tbody>
+    <tfoot>
+<tr>
+    <th>统计1</th>
+    <th>统计2</th>
+    <th>统计3</th>
+    <th>统计4</th>
+</tr>
+    </tfoot>
+
+
+</table>
+
+<script>
+    var box = document.getElementById('box');
+
+    box.tHead.style.borderColor = 'red';
+
+    box.rows[1].style.background = 'yellow';
+
+    box.tFoot.style.background = '#7c96f6';
+
+    box.tBodies[1].style.background = '#77ff86';   //两行一个tbody
+
+    box.tBodies[1].rows[1].cells[1].style.background = '#ff5c1b';
+
+</script>
+
+</body>
+</html>
