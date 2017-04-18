@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EVENT</title>
+    <script>
+        window.onload = function () {
+            var oText = document.getElementById('text1');
+            oText.onfocus = function () {                   //onfocus 元素获得焦点时触发
+                if(this.value == '请输入...'){
+                    this.value = '';
+                }
+            };
+
+            oText.onblur = function () {              //onblur 元素失去焦点时触发
+                if(this.value == ''){
+                    this.value = '请输入...';
+                }
+            };
+
+            oText.focus();
+
+            var Btn = document.getElementById('btn');
+            Btn.onclick = function () {
+                oText.select();
+            }
+
+        };
+    </script>
+</head>
+<body>
+
+<!--能够响应用户操作的元素才有焦点-->
+<!--<input type="text"/>-->
+<!--<input type="text"/>-->
+<!--<input type="text"/>-->
+<!--<div></div>-->
+<!--<input type="text"/>-->
+
+<input id="text1" type="text" value="请输入..." />
+<input type="button" value="全选" id="btn" />
+
+</body>
+</html>
