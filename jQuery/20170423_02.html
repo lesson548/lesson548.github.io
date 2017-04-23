@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq</title>
+    <script src="jquery-3.1.1.js"></script>
+</head>
+<body>
+
+<ul>
+    <li></li>
+    <li></li>
+    <li class="box"></li>
+    <li class="box"></li>
+    <li title="hello"></li>
+</ul>
+
+<script>
+//    $('li').css("background", 'red');
+//    $('li:first').css("background", 'red');          //选择第一个
+//    $('li:last').css("background", 'red');           //选择最后一个
+//    $('li:eq(2)').css("background", 'red');          //选择第三个
+//    $('li:even').css("background", 'red');          //选择奇数行
+//    $('li:odd').css("background", 'red');           //选择偶数行
+
+//    $('li.box').css("background", 'red');             //筛选方式
+//    $('li').filter('.box').css("background", 'red');  //筛选方式 filter
+
+    $('li').filter('[title = hello]').css("background", 'red');   //筛选title=hello
+
+
+
+</script>
+
+</body>
+</html>
