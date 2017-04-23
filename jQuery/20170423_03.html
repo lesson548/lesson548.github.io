@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq begin</title>
+    <script src="jquery-3.1.1.js"></script>
+</head>
+
+<body>
+
+<div id="div1">div</div>
+
+<script>
+
+//    window.onload = function () {
+//        var Div = document.getElementById('div1');
+//        Div.onclick = function () {
+//            alert(this.innerHTML);
+//        };
+//    };
+
+    $(function () {
+        $('#div1').click(function () {
+            alert($(this).html());
+        });
+    });
+
+</script>
+
+
+</body>
+</html>
