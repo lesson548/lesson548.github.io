@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq begin</title>
+    <script src="jquery-3.1.1.js"></script>
+</head>
+
+
+<body>
+<div id="div1">div</div>
+
+<script>
+
+    $(function () {
+//        $('#div1').click(function () {
+
+//            alert($(this).html());  //jq写法
+//            alert(this.innerHTML);  //js写法
+
+//            alert($(this).innerHTML); //错误 混用不行
+//            alert(this.html());      //错误 不能混用
+
+//            var oDiv = $('#div1');
+//            oDiv.html('hello');
+//            oDiv.css('background', 'red');
+//            oDiv.click(function () {
+//                alert(123);
+
+
+                $('#div1').html('hello').css('background', 'red').click(function () {    //链式操作
+                    alert(1234);
+                });
+//            });
+
+//        });
+    });
+
+</script>
+
+
+</body>
+</html>
