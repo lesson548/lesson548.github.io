@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq-filter not has</title>
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+//            $('div').filter('.box').css('background', 'red');   //filter  过滤 选中  针对元素本身
+
+//            $('div').not('.box').css('background', 'red'); //not   filter的反义词    针对元素本身
+
+//            $('div').has('span').css('background', 'red');   //has   包含    针对元素内部
+            $('div').has('.box3').css('background', 'red');   //has   包含    针对元素内部
+
+
+        });
+    </script>
+</head>
+<body>
+
+<div class="box">div1</div>
+<div>div2</div>
+<div><span class="box3">span</span></div>
+
+
+</body>
+</html>
