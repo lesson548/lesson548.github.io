@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>next prev eq find</title>
+    <script src="jquery-3.1.1.js"></script>
+
+    <script>
+        $(function () {
+            $('div').next().css('background', 'red');  //prev与之相反
+
+            $('div').find('h2').css('background', 'red');//find
+
+            $('div').find('h3').eq(0).css('background', 'red');//eq
+
+            alert($('#h').index());       //索引就是当前元素在兄弟节点中的位置
+
+
+        });
+    </script>
+</head>
+<body>
+
+<div>div1</div>
+<p>不带目的的纯粹 才是最强大的力量</p>
+<h2>跑者世界</h2>
+<div>
+    <h3>h3</h3>
+    <h3>h3</h3>
+    <h2>h2</h2>
+    <h3 id="h">h3</h3>
+    <h3>h3</h3>
+</div>
+</body>
+</html>
