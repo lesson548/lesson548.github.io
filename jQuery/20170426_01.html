@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addclass remove</title>
+
+    <style>
+        .box1{
+            width:200px;
+            height:200px;
+            background: #ff5c1b;
+            padding:10px;
+            border:10px solid #0000CC;
+            margin:10px;
+        }
+    </style>
+    <script src="jquery-3.1.1.js"></script>
+
+    <script>
+        $(function () {
+            $('div').addClass('box3 box4');   //添加类
+            $('div').removeClass('box3');     //移除类
+
+
+            alert($('div').width());           //width 无单位
+            alert($('div').innerWidth());     // width + padding
+            alert($('div').outerWidth());     //width + padding + border
+            alert($('div').outerWidth(true));     //width + padding + border + margin
+
+        });
+
+    </script>
+</head>
+<body>
+
+<div class="box1 box2">div1</div>
+
+</body>
+</html>
