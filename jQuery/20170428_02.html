@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq事件细节</title>
+    <script src="jquery-3.1.1.js"></script>
+
+    <script>
+        
+        $(function () {
+
+            $('div').click(function () {
+
+                //ev : event对象
+                //ev.pageX 相对于文档的X坐标   ： clientX 相对于可是去的X坐标
+                //ev.which  ：keyCode
+
+//                ev.preventDefault();       // 阻止默认事件
+//                ev.stopPropagation();      // 阻止冒泡的操作
+//                return false;            // 既阻止默认事件 又阻止冒泡的操作
+
+
+
+            });
+
+            $('div').one('click',function () {       //one() 只执行事件一次
+                alert(123);
+            });
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+
+<div>点击执行一次</div>
+
+</body>
+</html>
