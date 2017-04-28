@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编写弹窗</title>
+
+    <script src="jquery-3.1.1.js"></script>
+
+    <style>
+        /*div{*/
+            /*width:100px;*/
+            /*height:100px;*/
+            /*background: #ff5c1b;*/
+        /*}*/
+        *{
+            padding:0;
+            margin:0;
+        }
+        #login{
+            width:300px;
+            height:300px;
+            border:1px solid #757575;
+            position:absolute;
+        }
+        #close{
+            position: absolute;
+            top:0;
+            right:3px;
+        }
+
+    </style>
+
+    <script>
+
+        $(function () {
+
+//            document.createElement('div');    //js创建元素
+//            var oDiv = $('<div>div</div></div>');                     //创建div标签
+//            $('body').append(oDiv);
+        });
+
+        $(function () {
+
+            $('input').click(function () {
+
+                var oLogin = $('<div id="login"><p>用户名：<input type="text"/></p><p>密&nbsp;&nbsp;&nbsp;码：<input type="text"/></p><div id="close">X</div></div>');
+                $('body').append(oLogin);
+
+                $('#close').click(function () {
+                    oLogin.remove();
+                });
+
+                oLogin.css('left',($(window).width()-oLogin.outerWidth())/2);
+                oLogin.css('top',($(window).height()-oLogin.outerHeight())/2);
+
+                $(window).on('resize scroll',function () {
+                    oLogin.css('left',($(window).width()-oLogin.outerWidth())/2);
+                    oLogin.css('top',($(window).height()-oLogin.outerHeight())/2+$(window).scrollTop());
+                });
+
+            });
+
+
+
+        });
+
+    </script>
+
+
+</head>
+<body style="height: 2000px;">
+<input type="button" value="点击" id="input1"/>
+
+<!--<div id="login">-->
+    <!--<p>用户名：<input type="text"/></p>-->
+    <!--<p>密&nbsp;&nbsp;&nbsp;码：<input type="text"/></p>-->
+    <!--<div id="close">X</div>-->
+<!--</div>-->
+
+
+</body>
+</html>
