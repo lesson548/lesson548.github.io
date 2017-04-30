@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset=utf-8" />
+    <title>hover</title>
+    <style>
+        #div1{ width:100px; height:100px; background:red;}
+        #div2{ width:100px; height:100px; background:yellow;}
+    </style>
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+    <script>
+
+        $(function(){
+
+            $('#div1').hover(function(){
+
+                //$(this).css('background','blue');
+
+                //$('#div2').hide(3000);
+
+                //$('#div2').fadeOut(1000);  //默认400
+
+                //$('#div2').slideUp();
+
+                $('#div2').fadeTo(1000,0.5);
+
+            },function(){
+
+                //$(this).css('background','red');
+
+                //$('#div2').show(3000);
+
+                //$('#div2').fadeIn(1000);
+
+                //$('#div2').slideDown();
+
+                $('#div2').fadeTo(1000,1);
+
+            });
+
+        });
+
+
+
+    </script>
+</head>
+
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>
