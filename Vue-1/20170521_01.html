@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue指令</title>
+    <script src="vue.js"></script>
+
+</head>
+<body>
+
+<!--模板-->
+<div id="demo" :custom="abc">
+    <div v-html="html"></div>
+</div>
+
+<script>
+    //数据
+    let obj = {
+        html:"<div>hello,lesson</div>" ,    //这里应该是可信赖的html
+        abc:1
+    };
+
+    //Vm实例
+    var vm = new Vue({
+        el:"#demo",  //挂载元素
+        data:obj
+    });
+
+</script>
+
+</body>
+</html>
