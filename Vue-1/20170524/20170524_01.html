@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="index.css">
-    <script src="./vue.js"></script>
+    <script src="vue.js"></script>
 </head>
 <body>
 
@@ -20,8 +20,7 @@
             class="task-input"
             type="text"
             v-model="todo"
-            v-on:keyup.13="addTodo"
-    />
+            v-on:keyup.13="addTodo"/>
     <ul class="task-count" v-show="list.length">
         <li>{{noCheckeLength}}个任务未完成</li>
         <li class="action">
@@ -54,6 +53,6 @@
         </ul>
     </div>
 </div>
-<script src="./app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
