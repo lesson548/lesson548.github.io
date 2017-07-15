@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to nginx!</title>
+    <meta charset="utf-8"/>
+    <style>
+        body{
+            background: #dbd3ff;
+        }
+        #all{
+            width:50%;
+            height:320px;
+            margin:100px auto;
+            border:1px solid #b9c9f6;
+            background: #f1f1ff;
+            border-radius:7px;
+            box-shadow: -3px 3px 3px #757575;
+        }
+
+        #left{
+            width:50%;
+            height:318px;
+            float:left;
+            margin:0 auto;
+            border-right:1px dotted #7c96f6;
+        }
+        #right{
+            width:45%;
+            height:300px;
+            float:right;
+            margin-top:10px;
+            margin-right:5px;
+            background: #f1f1ff;
+        }
+
+        #code{
+            width:98%;
+            height:296px;
+            margin:20px 0 0 -5px;
+            float:right;
+        }
+
+        #input1{
+            width:85%;
+            height:180px;
+            margin:7%;
+            border-radius:5px;
+        }
+        #cout{
+            margin-top:-50px;
+            margin-left:30%;
+        }
+        #button1{
+            width:50%;
+            height:50px;
+            background: #25a3df;
+            margin:30px 20%;
+            border-radius:5px;
+        }
+        #button1:hover{
+            background-color: #2cd4d5;
+        }
+
+    </style>
+    <script src="../jQuery/jquery-3.1.1.js"></script>
+    <script src="jquery.qrcode.min.js"></script>
+    <script>
+        $(function () {
+            //转换编码格式
+            function utf16to8(str) {
+                var out, i, len, c;
+                out = "";
+                len = str.length;
+                for(i = 0; i < len; i++) {
+                    c = str.charCodeAt(i);
+                    if ((c >= 0x0001) && (c <= 0x007F)) {
+                        out += str.charAt(i);
+                    } else if (c > 0x07FF) {
+                        out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+                        out += String.fromCharCode(0x80 | ((c >>  6) & 0x3F));
+                        out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));
+                    } else {
+                        out += String.fromCharCode(0xC0 | ((c >>  6) & 0x1F));
+                        out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));
+                    }
+                }
+                return out;
+            }
+
+            $('#button1').click(function () {
+                $('#code').empty();
+                $('#code').qrcode({
+                    render:"table",
+                    width:260,
+                    height:260,
+                    text:utf16to8($('#input1').val())
+                });
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+<div id="all">
+    <div id="left">
+        <textarea maxlength="a" id="input1"  onkeydown='cur_word();' onkeyup='cur_word();'></textarea>
+        <br>
+        <div id="cout">
+            可以输入:<span id="span1"></span>
+        </div>
+
+        <button id="button1">点击转换</button>
+    </div>
+
+    <div id="right">
+        <div id="code"></div>
+    </div>
+
+</div>
+
+</body>
+<script>
+    var a=25;
+    function cur_word() {
+        $('#span1').html(a-$('#input1').val().length);
+    }
+    $('#input1').attr("maxlength",a);
+    $('#span1').html(a);
+</script>
+</html>
