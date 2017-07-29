@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html模版</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+<div id="demo">
+    <span v-bind:customId="id">{{message}}</span>  //v-bind 动态绑定数据，简写为：
+</div>
+<script>
+    let obj = {
+        message:"Hello,Vue!",
+        id:"123"
+    };
+
+    var vm = new Vue({
+       el:"#demo",
+        data:obj
+    });
+</script>
+
+</body>
+</html>

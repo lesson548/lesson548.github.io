@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html模版</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+<div id="demo" :custom="abc">
+    {{1+2}}                                 <!--可以写简单的表达式-->
+    <span v-html="html">{{html}}</span>     <!--html模版-->
+</div>
+<script>
+    let obj = {
+        html:"<div>hello,vue!</div>",        <!--必须是可信赖的html-->
+        abc:"1"
+    };
+
+    var vm = new Vue({
+        el:"#demo",
+        data:obj
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>render</title>
+    <script src="vue.js"></script>
+
+</head>
+<body>
+
+<div id="demo">
+    <span>hello,vue</span>        <!--被字符串模版覆盖-->
+</div>
+
+<script>
+    let obj = {
+        html:"<div>hello,vue!</div>",
+        abc:"123"
+    };
+
+    var str = '<div>hello,{{abc}}<span>,world</span></div>';//根节点只能有一个/ES6超级字符串支持字符串拼接换行
+    var vm = new Vue({
+        el:"#demo",
+        data:obj,
+        render(createElement){
+            return createElement(
+                "ul",
+                [
+                    createElement('li',1),
+                    createElement('li',2),
+                    createElement('li',3)
+                ]
+            );
+        }
+    });
+</script>
+
+</body>
+</html>

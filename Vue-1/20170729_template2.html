@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="demo">
+    <span>hello,vue</span>
+</div>
+<script type="x-template" id="temp">   // 存在不能跨文件复用的问题
+    <div>
+        hello,{{abc}}
+        <span>,world</span>
+    </div>
+</script>
+<script>
+    let obj = {
+        html:"<div>hello,vue!</div>",
+        abc:"123"
+    };
+
+    var vm = new Vue({
+        el:"#demo",
+        data:obj,
+        template:"#temp"              //字符串模版权重高，会替换html模版
+    });
+</script>
+
+</body>
+</html>
