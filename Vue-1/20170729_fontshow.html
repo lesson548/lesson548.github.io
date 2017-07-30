@@ -9,61 +9,71 @@
             width:800px;
             height:500px;
             margin:0 auto;
-            background: #dbd3ff;
+            /*background: url(http://ww2.sinaimg.cn/mw600/67989595gw1e05tjfpnapj.jpg)no-repeat center center;*/
+            background: url(333.jpg)no-repeat;
+            background-size: cover;
             border:1px solid #dbd3ff;
+            box-shadow:-0 0 5px #000000;
         }
         #word{
             width:200px;
-            margin:30px auto;
+            margin:15px 41%;
         }
         #show input{
-            margin:20px 30%;
-            width:300px;
+            margin:10px 34% 12px 34%;
+            width:250px;
             height:50px;
             text-align:center;
         }
         #all{
-            width:600px;
+            width:650px;
             height:300px;
             margin:0 auto;
-            /*background: #c6a5d5;*/
         }
         #one,#two{
-            width:500px;
+            width:650px;
             height:150px;
-            margin:0 auto;
-            /*background: #b2d5c5;*/
+            margin:20px auto;
             position: relative;
         }
         #font1,#font2,#font3,#font4{
             font-size:30px;
-            color:#0000CC;
+            color: #0200ff;
             margin-top:50px;
-            /*border:1px solid #d59d71;*/
         }
         #font1{
             font-family: "微软雅黑";
-            float:left;
         }
         #font2{
             font-family: "华文宋体";
-            float:right;
+            /*float:right;*/
         }
         #font3{
             font-family: 方正舒体;
-            float: left;
         }
         #font4{
             font-family: "方正姚体";
+        }
+        #font1,#font2,#font3,#font4{
+            margin:20px auto;
+        }
+        .one,.two{
+            line-height:40px;
+        }
+
+        .card1{
+            float:left;
+        }
+        .card2{
             float:right;
         }
-        .one{
-            position: absolute;
-            left:30px;
-        }
-        .two{
-            position:absolute;
-            right:30px;
+        .card1,.card2{
+            width:300px;
+            height:140px;
+            box-shadow:0 0 5px #0c0f0a ;
+            position:relative;
+            text-align: center;
+            border:1px solid #fff;
         }
     </style>
 </head>
@@ -74,16 +84,25 @@
     <input v-model="message"/>
     <div id="all">
         <div id="one">
-            <span class="one">微软雅黑：</span>
-            <p id="font1">{{message}}</p>
-            <span class="two">华文宋体：</span>
-            <p id="font2">{{message}}</p>
+            <div class="card1">
+                <span class="one">微软雅黑</span>
+                <p id="font1">{{message}}</p>
+            </div>
+            <div class="card2">
+                <span class="two">华文宋体</span>
+                <p id="font2">{{message}}</p>
+            </div>
         </div>
         <div id="two">
-            <span class="one">方正舒体：</span>
-            <p id="font3">{{message}}</p>
-            <span class="two">方正姚体：</span>
-            <p id="font4">{{message}}</p>
+            <div class="card1">
+                <span class="one">方正舒体</span>
+                <p id="font3">{{message}}</p> 
+            </div>
+            <div class="card2">
+                <span class="two">方正姚体</span>
+                <p id="font4">{{message}}</p>
+            </div>
+            
         </div>
     </div>
 </div>
