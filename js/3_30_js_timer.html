@@ -7,45 +7,75 @@
         #div1 {
             width:20px;
             height:20px;
-            background: #000000;
+            background: #604dd5;
             position:absolute;
-            top:200px;
-            left:600px;
+            top:180px;
+            left:675px;
+            border-radius: 10px;
         }
         #area{
-            width:520px;
-            height:320px;
-            background: #b6ccf6;
-            margin: 50px 0 0 342px;
+            width:300px;
+            height:300px;
+            background: #fff;
+            margin: 20px auto;
+            border-radius: 10px;
         }
         #butt{
-            width:520px;
-            height:100px;
-            background: #ae91df;
-            margin-left:342px;
+            width:150px;
+            height:150px;
+            /*background: #df9760;*/
+            margin:30px auto;
         }
-        #btn1 ,#btn2 ,#btn3, #btn4{
+        #btn1,#btn2,#btn3,#btn4{
             width:50px;
             height:50px;
-            background: #fd864b;
-            margin-top:25px;
-            margin-left:60px;
+            background: #d57c5e;
+            border-radius: 10px;
+        }
+        #btn1:hover,#btn2:hover,#btn3:hover,#btn4:hover{
+            background: #604dd5;
+            color:#fff;
+        }
+        #btn1,#btn2{
+            display: block;
+            margin:0 auto;
+        }
+        #btn2{
+            display: block;
+            margin:50px auto;
+        }
+        #btn3{
+            float:left;
+        }
+        #btn4{
+            float:right;
+        }
+        #all{
+            width:350px;
+            height:520px;
+            margin:0 auto;
+            border-radius: 15px;
+            background:url(http://imgsrc.baidu.com/imgad/pic/item/267f9e2f07082838ae4cb732b299a9014c08f157.jpg)no-repeat;
+            background-size: cover;
+            border:1px solid #9d9d9d;
+            box-shadow: 0 0 5px #282828;
         }
     </style>
 </head>
 
 <body>
+<div id="all">
+    <div id="area">
+        <div id="div1"></div>
+    </div>
+    <div id="butt">
+        <input id="btn1" type="button" value="上" />
+        <input id="btn3" type="button" value="左" />
+        <input id="btn4" type="button" value="右" />
+        <input id="btn2" type="button" value="下" />
 
-<div id="area"></div>
-<div id="butt">
-    <input id="btn1" type="button" value="上" />
-    <input id="btn2" type="button" value="下" />
-    <input id="btn3" type="button" value="左" />
-    <input id="btn4" type="button" value="右" />
+    </div>
 </div>
-
-
-<div id="div1"></div>
 
 <script>
     var oBtn1 = document.getElementById('btn1');
@@ -56,23 +86,23 @@
 
     oBtn1.onclick = function () {
 
-        doMove ( oDiv, 'top', 5, 50 );
+        doMove ( oDiv, 'top', 5, 30 );
 
     };
 
     oBtn2.onclick = function () {
 
-        doMove ( oDiv, 'top', 5, 350 );
+        doMove ( oDiv, 'top', 5, 310 );
 
     };
     oBtn3.onclick = function () {
 
-        doMove ( oDiv, 'left', 5, 350 );
+        doMove ( oDiv, 'left', 5, 533 );
 
     };
     oBtn4.onclick = function () {
 
-        doMove ( oDiv, 'left', 5, 850 );
+        doMove ( oDiv, 'left', 5, 813 );
 
     };
 
