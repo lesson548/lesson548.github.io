@@ -33,14 +33,17 @@
         #bigdiv{
             width:300px;
             height:190px;
-            border:20px solid #72798e;
+            border:20px solid #357ddf;
             display: none;
             margin:120px 450px;
             position:fixed;
             top:120px;
+            z-index: 2;
+            background: #89a4df;
         }
         .bg{
             margin:10px 0 10px 30px;
+
         }
         .wid{
             margin:0 0 10px 30px;
@@ -84,6 +87,19 @@
             background:blue;
         }
 
+        #bg{
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: #282828;
+            z-index:1;
+            /*-moz-opacity: 0.7;*/
+            opacity:.60;                  //设置遮罩层透明度
+            /*filter: alpha(opacity=70);*/
+        }
     </style>
 </head>
 <body>
@@ -94,11 +110,11 @@
 <div id="div1" class="div1">
 
     </div>
-
+<div id="bg"></div>
 <div id="bigdiv">
 
         <div class="bg">
-            请选择背景色&nbsp;：
+            请选择背景色&nbsp：
             <input id="redbut" class="redbut" type="button" value="红"  />
             <input id="yellowbut" class="yellowbut" type="button" value="黄" />
             <input id="bluebut" class="bluebut" type="button" value="蓝" />
@@ -126,6 +142,7 @@
 
     function showDiv(){
         document.getElementById('bigdiv').style.display = 'block';
+        document.getElementById('bg').style.display = 'block';
     }
 
 
@@ -202,6 +219,7 @@
         Insure.onclick = changeinsure;
         function changeinsure() {
             document.getElementById('bigdiv').style.display = 'none';
+            document.getElementById('bg').style.display = 'none';
         }
 
 </script>
