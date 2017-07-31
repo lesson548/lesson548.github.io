@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<!--模板-->
+<div id="demo">
+    <span v-on:click="clickHandle">{{ message }}</span>
+</div>
+
+<script>
+    //数据
+    let obj = {
+        message:"hello,Vue!"
+    };
+
+    //Vm实例
+    new Vue({
+        el:"#demo",
+        data: obj,
+        methods:{
+            clickHandle:function () {
+                alert("click")
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>

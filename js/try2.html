@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="../jQuery/jquery-3.1.1.js"></script>
+    <style>
+        #test{
+            width:130px;
+            height:190px;
+            position: relative;
+            left:0;
+            top:0;
+        }
+
+        .math{
+            font-size:30px;
+        }
+        .div1{
+            background:url('../img/20170331_01.png');
+            width:130px;
+            height:190px;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+
+</head>
+<body>
+
+<script>
+
+
+
+    $(function () {
+
+        var data = 5;
+        $('#test').html("<div class='math'>"+data+"</div>");
+        console.log($('#test').text());
+
+        $('#test').addClass('bg1');
+        $('#test').click(function () {
+            $(this).toggleClass('bg2');
+        });
+
+    });
+</script>
+<div class="div1">
+<div id="test" class="bg1 bg2" >
+    </div>
+</div>
+
+</body>
+</html>

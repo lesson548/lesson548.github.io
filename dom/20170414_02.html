@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>BOM</title>
+    <script>
+        window.onload = function() {
+
+            var oUl1 = document.getElementById('ul1');
+            var oUl2 = document.getElementById('ul2');
+
+            //var aLi1 = getElementsByClassName('box');
+            //var aLi2 = getElementsByClassName('box1');
+
+            //alert(aLi.length)
+            //console.log(aLi)
+            //console.log(aLi1)
+            //console.log(aLi2)
+
+
+            /*var aLi1 = getElementsByClassName(oUl1, 'box');
+             console.log(aLi1)*/
+
+
+            var box = getElementsByClassName(document, 'li', 'box');
+            console.log(box);
+
+            function getElementsByClassName(oParent, tagName, className) {
+
+                var aEls = oParent.getElementsByTagName(tagName);
+                var arr = [];
+
+                /*for (var i=0; i<aEls.length; i++) {
+                 if ( aEls[i].className == className ) {
+                 arr.push(aEls[i]);
+                 }
+                 }*/
+
+                for (var i=0; i<aEls.length; i++) {
+
+                    var arrClassName = aEls[i].className.split(' ');
+
+                    for (var j=0; j<arrClassName.length; j++) {
+                        if ( arrClassName[j] == className ) {
+                            arr.push(aEls[i]);
+                            break;
+                        }
+                    }
+
+                }
+
+                return arr;
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+<ul id="ul1">
+    <li>11111111</li>
+    <li class="box box">2222222222</li>
+    <li class="box">3333333333</li>
+    <li class="box1">44444444444</li>
+</ul>
+<ul id="ul2">
+    <li>11111111</li>
+    <li class="box box">2222222222</li>
+    <li class="box">3333333333</li>
+    <li class="box1">44444444444</li>
+</ul><br>
+<div class="box">div</div>
+</body>
+</html>

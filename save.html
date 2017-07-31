@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>界面</title>
+
+    <style>
+
+        #top{
+            background: #8dadf6;
+            height:50px;
+            margin-top:-20px;
+        }
+        #title{
+            text-align: center;
+            line-height:50px;
+        }
+        #all{
+            width:80%;
+            height:600px;
+            background: #b6ccf6;
+            margin:0 auto;
+            border-radius:10px;
+
+        }
+        a{
+            font-size:30px;
+            color: #000000;
+            text-decoration: none;
+        }
+        #right{
+            width:100%;
+            height:500px;
+            margin:0 auto;
+            border-radius:10px;
+        }
+
+        #table1{
+            margin:20px auto;
+            width:80%;
+
+
+        }
+        #list th,#list2 td{
+            text-align: center;
+        }
+        #do{
+            width:80%;
+            height:50px;
+            /*background: #ffac5b;*/
+            margin:0 auto;
+        }
+        #button1,#button2,#button3,#button4{
+            width:20%;
+            height:50px;
+            background: #7c96f6;
+            margin:10px;
+        }
+        a,#button2,#button3{
+            font-size:18px;
+        }
+    </style>
+    <script src="jquery-3.1.1.js"/>
+    <script>
+
+        $(function () {
+
+            function check(sender, checkName) {
+                var checkItems = document.getElementsByName(checkName);
+                for (var i = 0; i < checkItems.length; i++) {
+                    checkItems[i].checked = sender.checked;
+                }
+            }
+
+            function check_all() {
+                $.get("http://www.liulei.com/api/user/all",function(data){
+                    if(data.success == true) {
+                        $.each(data.data,function (key,val) {
+                            $('table').append("<tr  class='list2'><td><input type='checkbox'name='item1' /></td>" +
+                                "<td class='id1'>" + val.id + "</td>" + "<td>"+val.userId+"</td>" + "<td>"+val.userName+"</td>" +
+                                "<td>"+val.password+"</td><td>"+val.phone+"</td>" + "<td>"+val.country+"</td>" +
+                                "<td>"+val.province+"</td><td>"+val.city+"</td>" + "<td><div class='del'>删除</div></td>" +
+                                "<td class='change' >修改</td></tr>");
+                        });
+                    }
+                });
+            }
+
+
+            $(document).on("click",".del",function(){
+                $(this).parent("td").parent("tr").remove();
+                $.ajax({
+                    type: "DELETE",
+                    url: "http://www.liulei.com/api/user/"+$(this).parent('td').prev().prev().prev().prev().prev().prev().prev().prev().eq(0).text(),            //如何添加id
+                    data:{},
+                    dataType: "json"
+                });
+
+            });
+
+            //批量删除
+            $('#button3').click(function () {
+                $("input[name='item1']:checked").each(function () {
+                    $(this).parent("td").parent("tr").remove();
+                    $.ajax({
+                        type: "DELETE",
+                        url: "http://www.liulei.com/api/user/"+$(this).parent('td').prev().prev().prev().prev().prev().prev().prev().prev().text(),
+                        data:{},
+                        dataType: "json"
+                    });
+                });
+            });
+
+            $('p').click(function () {
+                console.log(123);
+            });
+
+        });
+    </script>
+
+
+</head>
+<body>
+
+<div id="all">
+
+    <div id="top">
+        <h1 id="title">欢迎使用任务管理系统</h1>
+    </div>
+
+    <div id="do">
+        <button id="button1"><a href="add.html">用户注册</a></button>
+        <button id="button2"><a href="change.html">更改信息</a></button>
+
+        <button id="button3">批量删除</button>
+        <button id="button4"><a href="liulei.html">IP地址查询</a></button>
+    </div>
+
+    <div id="right">
+        <table  id="table1" border ="1" cellspacing="0" cellpadding="0">
+            <tr>
+                <th>
+                    <input  type="checkbox" onclick="check(this, 'item1');" />
+                </th>
+                <th>ID</th>
+                <th>用户id</th>
+                <th>用户名</th>
+                <th>密码</th>
+                <th>电话</th>
+                <th>省</th>
+                <th>市</th>
+                <th>区</th>
+                <th>操作</th>
+                <th>操作</th>
+            </tr>
+
+        </table>
+    </div>
+</div>
+<p>查询系统</p>
+</body>
+</html>

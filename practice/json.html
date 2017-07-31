@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>remove_table</title>
+
+
+
+</head>
+<body>
+
+<table border="1" cellspacing="0" cellpadding="0" >
+    <tr>
+        <th>姓名</th>
+        <th>号码</th>
+        <th>地址</th>
+    </tr>
+    <tr>
+        <td id="name1"></td>
+        <td id="num1"></td>
+        <td id="address1"></td>
+    </tr>
+    <tr>
+        <td id="name2"></td>
+        <td id="num2"></td>
+        <td id="address2"></td>
+    </tr>
+    <tr>
+        <td id="name3"></td>
+        <td id="num3"></td>
+        <td id="address3"></td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+
+    var txt = '{"people":['+'{"name":"罗勇","num":"245","address":"高新区"},'+
+        '{"name":"小芳","num":"358","address":"恒大"},'+
+        '{"name":"老牛","num":"355","address":"长安"}]}';
+
+    obj = JSON.parse(txt);
+
+    document.getElementById('name1').innerHTML = obj.people[0].name;
+    document.getElementById('num1').innerHTML = obj.people[0].num;
+    document.getElementById('address1').innerHTML = obj.people[0].address;
+
+    document.getElementById('name2').innerHTML = obj.people[1].name;
+    document.getElementById('num2').innerHTML = obj.people[1].num;
+    document.getElementById('address2').innerHTML = obj.people[1].address;
+
+    document.getElementById('name3').innerHTML = obj.people[2].name;
+    document.getElementById('num3').innerHTML = obj.people[2].num;
+    document.getElementById('address3').innerHTML = obj.people[2].address;
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微信对话生成器</title>
+
+    <script src="../jQuery/jquery-3.1.1.js"></script>
+
+    <style>
+        #box{
+            width:300px;
+            height:500px;
+            background: #8dadf6;
+            margin:0 auto;
+            border-radius: 10px;
+        }
+        #header{
+            text-align: center;
+            font-size:20px;
+            padding-top:10px;
+        }
+        #show{
+            width:240px;
+            height:320px;
+            border-radius: 8px;
+            margin-top:5px;
+            margin-left:20px;
+            background: #ffffff;
+            /*display:inline-block;*/
+            white-space:normal;
+            /*word-break: break-all; word-wrap:break-word;*/
+        }
+        #write{
+            width:260px;
+            height:30px;
+            margin:20px 0 0 17px;
+            border-radius: 5px;
+        }
+
+        #btnA,#btnB{
+            width:117px;
+            height:40px;
+            background: #c0d1f6;
+            margin:20px 0 0 20px;
+            border-radius: 5px;
+        }
+        #showcontent{
+            border: 2px solid gray;
+            background: white;
+            width: 260px;
+            height: 320px;
+            padding: 10px;
+        }
+
+        option{
+            font-size: 12px;
+            max-width: 200px;
+            height: auto;
+            border: 1px solid gainsboro;
+            border-radius: 8px;
+            padding: 5px;
+            background-color: greenyellow;
+            margin:10px ;
+            /*word-break: break-all; word-wrap:break-word;*/
+        }
+
+        #everyword{
+
+            height:auto;
+            background: #ffac5b;
+            border-radius: 8px;
+            margin:5px;
+            padding:3px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+    <div id="header">Wechat</div>
+    <div type="text" id="show">
+        <div id="show1"></div>
+        <select multiple="multiple" id="showcontent">
+
+        </select>
+    </div>
+
+    <input type="text"  id="write" />
+
+    <input type="button" value="A发送" id="btnA"/>
+    <input type="button" value="B发送" id="btnB"/>
+</div>
+
+<script>
+    var box = document.getElementById('box');
+    var show = document.getElementById('show').value;
+
+    var btnA = document.getElementById('btnA');
+    var btnB = document.getElementById('btnB');
+
+
+
+
+    btnA.onclick = function () {
+
+        var text= document.getElementById('write').value;
+
+//        var show = document.getElementById('showcontent');
+//        var option = document.createElement("option");
+//        var len = text.length;
+////        option.maxWidth = "200px";                  //如何控制div显示的最大宽度/即自动换行
+//        option.style.width = len * 12 + len*1 + "px";
+//        option.style.marginLeft = "8px";
+//        option.innerHTML = text;
+        $("<div id='everyword'>"+text+"</div>").appendTo('#show1');
+
+//        show.appendChild(option);
+        document.getElementById('write').value = "";
+
+
+//        var get = write.value;
+//        console.log(get);
+//        show.value = get;
+    };
+
+
+    btnB.onclick = function () {
+        var text= document.getElementById('write').value;
+
+        $("<div id='everyword'>"+text+"</div>").appendTo('#show1');
+
+//        var show = document.getElementById('showcontent');
+//        var option = document.createElement("option");
+//        var len = text.length;
+//        option.style.width = len * 12 + len*1 + "px";
+//        option.style.marginLeft = 240 - (len * 12 + len*1)-45+"px";
+//        option.style.backgroundColor = "white";
+//        option.innerHTML = text;
+//        show.appendChild(option);
+        document.getElementById('write').value = "";
+    };
+
+
+
+</script>
+
+
+</body>
+</html>

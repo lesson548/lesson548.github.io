@@ -25,6 +25,7 @@ li div{
 }
 .ul2 li{
     float:left;
+    z-index:1;
 }
 
 .word{
@@ -36,6 +37,7 @@ li div{
     background: #f2eeff;
     margin:0 auto;
     box-shadow:0 0 3px #5c6e8e;
+    color:#fff;
 }
 
 .all{
@@ -48,13 +50,17 @@ li div{
 
 .bg1{
     background:url('666.png');
+    z-index:1;
 }
 .bg2{
     background:url('../../img/20170331_01.png');
+    z-index:3;
+    opacity:1;
 }
 
 .math{
-    padding-top:80px;
+    padding-top:60px;
     text-align: center;
-    font-size:20px;
+    font-size:50px;
+    z-index:2
 }

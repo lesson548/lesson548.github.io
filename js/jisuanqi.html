@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单的计算器</title>
+
+    <script src="../jQuery/jquery-3.1.1.js"></script>
+
+    <style>
+        #all{
+            width:300px;
+            height:390px;
+            margin:0 auto;
+            background: #ae91df;
+        }
+
+        #cal{
+            width:100px;
+            margin-left:120px;
+            line-height:40px;
+        }
+        #show{
+            width:250px;
+            height:50px;
+            background: #5e84fd;
+            margin:0 25px 20px 25px;
+        }
+        #show input{
+            width:250px;
+            height:50px;
+
+        }
+        #num{
+            width:250px;
+            height:240px;
+            background: #5c6e8e;
+            margin:0 auto;
+            padding-top:20px;
+        }
+        #rol1{
+            width:250px;
+            height:40px;
+        }
+        #rol1 input{
+            width:40px;
+            height:40px;
+            background: #fd864b;
+            /*margin-top:20px;*/
+            /*margin-left:15px;*/
+            margin:0 0 10px 15px;
+        }
+        #rol2 input,#rol3 input,#rol4 input{
+            width:40px;
+            height:40px;
+            background: #fd864b;
+            margin:20px 0 0 15px;
+        }
+        #rol1 input:hover,#rol2 input:hover,#rol3 input:hover,#rol4 input:hover{
+            background: #FFF;
+        }
+        .numshow{
+            float:left;
+        }
+    </style>
+
+    <script>
+
+        var num1 = 0;
+        var num2 = 0;
+        var result = 0; //显示栏显示的数字
+        var operater = 0; //运算符号
+        var str;
+
+        $(function () {
+
+            $('.button_num').click(function () {
+
+                $(this).val();
+//                console.log($(this).val());
+                $('.numshow').val($(this).val());
+                num1 = $(this).val();
+                console.log(num1);
+                str = str+num1;
+
+            })
+        });
+//        num1 = $('.numshow').val();
+        function clean() {
+            num1 = 0;
+            num2 = null;
+            result = 0;
+            operater = 0;
+            var sure = 0;
+            $('.numshow').val(0);
+        }
+
+
+        function add() {
+            calculate();
+            operater=1;
+        }
+        function jian(){
+            calculate();
+            operater=2;
+        }
+        function cheng(){
+            calculate();
+            operater=3;
+        }
+        function chu() {
+            calculate();
+            operater=4;
+        }
+        function equal(){
+            $('.numshow').val(eval(str));
+            console.log(result);
+            console.log(eval(str));
+        }
+
+        function calculate() {
+
+            $('.button_num').click(function () {
+                $(this).val();
+                $('.numshow').val($(this).val());
+                num2 = $(this).val();
+                console.log(num2);
+            });
+            if(num2 != null ){
+                switch (operater) {
+                    case 1:
+                        result = num1 + num2;
+                        break;
+                    case 2:
+                        result = num1 - num2;
+                        break;
+                    case 3:
+                        result = num * num2;
+                        break;
+                    case 4:
+                        result = num1 / num2;
+                        break;
+                }
+            }
+            else{
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+
+<div id="all">
+    <div id="cal">计算器</div>
+
+    <div id="show">
+        <input class="numshow" type="text" name="result" value="0"/>
+    </div>
+    
+    <div id="num">
+        <div id="rol1">
+            <input id="button1" type="button" value="1" class="button_num" />
+            <input id="button2" type="button" value="2" class="button_num" />
+            <input id="button3" type="button" value="3" class="button_num" />
+            <input id="button10" type="button" value="+"  class="button_num" />
+        </div>
+
+        <div id="rol2">
+            <input id="button4" type="button" value="4" class="button_num" />
+            <input id="button5" type="button" value="5" class="button_num" />
+            <input id="button6" type="button" value="6" class="button_num" />
+            <input id="button20" type="button" value="-"  class="button_num" />
+        </div>
+
+        <div id="rol3">
+            <input id="button7" type="button" value="7" class="button_num" />
+            <input id="button8" type="button" value="8" class="button_num" />
+            <input id="button9" type="button" value="9" class="button_num" />
+            <input id="button30" type="button" value="*"  class="button_num" />
+        </div>
+
+        <div id="rol4">
+            <input id="button0" type="button" value="0" class="button_num"/>
+            <input id="button11" type="button" value="AC"  class="button_num"/>
+            <input id="button12" type="button" value="=" onclick="equal()"/>
+            <input id="button40" type="button" value="/"  class="button_num" />
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
