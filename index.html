@@ -1,64 +1,217 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Cache-Control" content="max-age=360000" charset="utf-8" />
-    <title>My World</title>
-    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>my world</title>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        #all{
+            width:100%;
+            height:635px;
+            /*background: url(https://dn-linuxcn.qbox.me/data/attachment/album/201604/08/205259cyk9z89d2ntyvy8t.jpg) no-repeat center center fixed;*/
+            background: url(http://image4.tuhip.net/pictures/201606/07/20160607115710976552762.jpg) no-repeat center center fixed;
+            background-size:cover;
+            /*background: #282828;*/
+        }
+
+        #top{
+            width:80%;
+            height:80px;
+            /*background: #b0bfdf;*/
+            margin:0 auto;
+        }
+        #top p{
+            margin:0;
+            padding:15px;
+            text-align: center;
+            font:30px/60px "华文隶书";
+            color: #f1f1ff;
+        }
+        #bar{
+            width:80%;
+            height:50px;
+            margin:0 auto;
+            /*border:2px solid #9d9d9d;*/
+            text-align: center;
+            /*background: #89a4df;*/
+        }
+        .bar{
+            width:23%;
+            height:45px;
+            margin:5px;
+            border:1px solid #9d9d9d;
+            display: inline-block;
+            box-shadow:0 0 5px #e2d2ff;
+        }
+        .bar p{
+            color:#fff;
+            font-size:16px;
+            line-height:20px;
+        }
+        .bar:hover{
+            background: #d56440;
+        }
+
+        #main{
+            width:80%;
+            height:400px;
+            margin:0 auto;
+            text-align: center;
+            /*background: #e2d2ff;*/
+        }
+        .step{
+            width:21%;
+            height:360px;
+            /*border:2px solid #d56440;*/
+            margin:20px 10px;
+            display:inline-block;
+            vertical-align: top;                    //防止下沉
+        box-shadow:0 0 8px #f1f1ff;
+        }
+        #main_one{
+            background:url(http://img02.tooopen.com/images/20150525/tooopen_sy_126160721693.jpg);
+            background-size:cover;
+        }
+        .button_top{
+            width:60%;
+            height:40px;
+            background: #f1f1ff;
+            margin:5px auto;
+            border-radius: 10px;
+            color: #604dd5;
+            font-size:20px;
+        }
+        .button_top:hover{
+            background: #df9760;
+            color:#fff;
+        }
+        .step ul li{
+            list-style: none;
+            margin:5px 0 0 -35px;
+        }
+        .step ul li button{
+            width:70%;
+            height:40px;
+            background: none;
+            font-size:18px;
+        }
+        #main_two{
+            /*background:url(http://img95.699pic.com/photo/40005/1767.jpg_wh300.jpg);*/
+            background:url(http://www.taopic.com/uploads/allimg/140223/240377-1402231J05474.jpg);
+            background-size:cover;
+        }
+        #main_three{
+            background:url(http://img95.699pic.com/photo/40005/1790.jpg_wh300.jpg);
+            background-size:cover;
+        }
+        #main_four{
+            background:url(http://img.juimg.com/tuku/yulantu/130708/318950-130FQ4334190.jpg);
+            background-size:cover;
+        }
+
+        #bottom{
+            width:80%;
+            height:90px;
+            margin:0 auto;
+            /*border:1px solid #d56440;*/
+            text-align:center;
+            /*background:url(http://bpic.588ku.com/back_pic/04/39/34/18584d7215792c4.jpg)no-repeat 0 -50px;*/
+            /*background-size:cover;*/
+        }
+        .bottom{
+            width:23%;
+            height:60px;
+            margin:10px 5px;
+            border:1px solid #9d9d9d;
+            display: inline-block;
+            box-shadow:0 0 3px #fff;
+        }
+        .bottom p{
+            color:#fff;
+        }
+        .bottom:hover{
+            background: #357ddf;
+        }
+    </style>
 </head>
-
-
 <body>
-<div class="top_up">
-    <span class="word">我的WEB前端之路</span>
-</div>
 
-<div class="top_down">
-    <div><a href="practice/html_practice.html"><strong>HTML</strong></a></div>
-    <div><a href="practice/css_practice.html"><strong>CSS</strong></a></div>
-    <div><a href="js_page.html"><strong>javascript</strong></a></div>
-    <div><a href="#"><strong>jQuery</strong></a></div>
-    <div><a href="#"><strong>others</strong></a></div>
-</div>
+<div id="all">
+    <div id="top">
+        <p>我觉得这不行 / 我觉得还OK</p>
+    </div>
+    <div id="bar">
+        <div class="bar"><p>step_one</p></div>
+        <div class="bar"><p>step_two</p></div>
+        <div class="bar"><p>step_three</p></div>
+        <div class="bar"><p>step_four</p></div>
+    </div>
 
-<div class="main">
-    <div class="right_bar">
-        <div class="left1">
-            <a href="html/show_3_16.html"><strong>一起攻城</strong></a>
+    <div id="main">
+        <div id="main_one" class="step">
+            <button class="button_top">前端初试</button>
+
+            <ul>
+                <li><button><a href="index_main.html">这里有脆脆鲨</a></button></li>
+                <li><button>这里有脆脆鲨</button></li>
+                <li><button>这里有脆脆鲨</button></li>
+                <li><button>这里有脆脆鲨</button></li>
+                <li><button>这里有脆脆鲨</button></li>
+                <li><button>点击获取更多</button></li>
+            </ul>
 
         </div>
-        <div class="left2">
-            <a href="company-website/index.html"><strong>仿慕课网</strong></a>
+        <div id="main_two" class="step">
+            <button class="button_top">小试牛刀</button>
+            <ul>
+                <li><button>这里有脆脆鲨</button></li>
+                <li><button>这里有脆脆鲨</button></li>
+                <li><button>这里有脆脆鲨</button></li>
+                <li><button>这里有脆脆鲨</button></li>
+                <li><button>这里有脆脆鲨</button></li>
+                <li><button>点击获取更多</button></li>
+            </ul>
         </div>
-        <div class="left3">
-            <a href="lazy_load/jquery_lazy_load.html"><strong>懒加载图</strong></a>
+        <div id="main_three" class="step">
+            <button class="button_top">渐入佳境</button>
+            <ul>
+
+            </ul>
         </div>
-        <div class="left4">
-            <a href="practice/table_input.html"><strong>列表操作</strong></a>
-        </div>
-        <div class="left5">
-            <a href="#"><strong>项目实例(待)</strong></a>
-        </div>
-        <div class="left6">
-            <a href="#"><strong>项目实例(待)</strong></a>
+        <div id="main_four" class="step">
+            <button class="button_top">得心应手</button>
+            <ul>
+
+            </ul>
         </div>
     </div>
 
-    <div class="center">
-        <img src="img/QQ20170306162146.png">
+    <div id="bottom">
+        <div class="bottom"><p>个人信息</p></div>
+        <div class="bottom"><p>联系方式</p></div>
+        <div class="bottom"><p>兴趣爱好</p></div>
+        <div class="bottom"><p>更多了解</p></div>
     </div>
 
 </div>
-
-<div class="copyright">
-    <ul>
-        <li><a href="#">我的简介</a></li>
-        <li><a href="#">学习课程</a></li>
-        <li><a href="#">给我留言</a></li>
-        <li><a href="#">兴趣爱好</a></li>
-        <li><a href="#">我的微信</a></li>
-    </ul>
-</div>
-
 
 </body>
+<script>
+    $(function () {
+        $('.step').mouseover(function () {
+            $(this).css('width','25%');
+            $(this).css('height','370px')
+        });
+
+        $('.step').mouseleave(function () {
+            $(this).css('width','21%');
+            $(this).css('height','360px')
+        })
+    });
+</script>
 </html>
