@@ -121,13 +121,18 @@
         template:`<section class="warp">
 					<div class="searchIpt clearFix">
 						<div class="clearFix">
-							<input type="text" class="keyWord" value="val" @click="selectShow = !selectShow" />
+							<input type="text" class="keyWord" v-bind:value="val" @click="selectShow = !selectShow" />
 							<input type="button" :value="btn">
 							<span></span>
 						</div>
-						<custom-list class="list" v-show="selectShow" v-bind:list="list"></custom-list>
+						<custom-list class="list" v-show="selectShow" v-bind:list="list" v-on:receive="changeValueHandle"></custom-list>
 					</div>
-				</section>`
+				</section>`,
+        methods:{
+            changeValueHandle(value){
+                this.val = value;
+            }
+        }
     });
 
     Vue.component("custom-list",{
@@ -137,7 +142,7 @@
 				</ul>`,
         methods:{
             selectValueHandle:function(item){
-
+                this.$emit("receive",item);
             }
         }
 
