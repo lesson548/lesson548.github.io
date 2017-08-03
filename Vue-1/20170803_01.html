@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+
+
+</head>
+<body>
+
+<div id="app">
+    <custom-component v-bind:count="count"></custom-component>
+    {{count}}
+</div>
+
+<script>
+    Vue.component("custom-component",{
+        data(){
+            return{
+                countPlus:this.count
+            }
+        },
+        props:["count"],
+        template:`<div>
+                    <h2>自定义组件</h2>
+                    <input type="button" value="点击改变count" v-on:click="changeCount" />
+                    {{countPlus}}
+                </div>`,
+        methods:{
+            changeCount(){
+                this.countPlus++;
+            }
+        }
+    });
+    new Vue({
+        el:"#app",
+        data:{
+            count:0
+        }
+    })
+</script>
+
+</body>
+</html>
