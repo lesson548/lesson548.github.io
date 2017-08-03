@@ -10,8 +10,10 @@
 <body>
 
 <div id="app">
-    <custom-component v-bind:count="count"></custom-component>
-    {{count}}
+    <h3>父组件中使用了count</h3>
+    <p>{{count}}</p>
+    <custom-component v-bind:count="count" v-on:increment-click="countHandle"></custom-component>
+
 </div>
 
 <script>
@@ -30,6 +32,7 @@
         methods:{
             changeCount(){
                 this.countPlus++;
+                this.$emit("increment-click");
             }
         }
     });
@@ -37,6 +40,11 @@
         el:"#app",
         data:{
             count:0
+        },
+        methods:{
+            countHandle(){
+                this.count++;
+            }
         }
     })
 </script>
