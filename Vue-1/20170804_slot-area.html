@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slot</title>
+    <script src="vue.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <h2>自定义组件</h2>
+    <custom>
+        {{message}}
+    </custom>
+</div>
+
+<script>
+    Vue.component("custom",{
+        data(){
+            return{
+                message:"我是子组件的data"
+            }
+        },
+        template:`
+            <div>
+                <slot></slot>
+                <p>默认样式slot</p>
+                {{message}}
+</div>
+                `
+    })
+    new Vue({
+        el:"#app",
+        data:{
+            message:"我是父组件的data"
+        }
+    })
+</script>
+
+</body>
+</html>
