@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slot</title>
+    <script src="vue.js"></script>
+
+</head>
+<body>
+
+<div id="app">
+    <h2>自定义组件</h2>
+    <custom>
+        <div slot="one">替换第1个slot</div>
+        <div slot="three">替换第3个slot</div>
+        <span slot="two">替换第2个slot</span>
+        <div slot="two">替换第2个slot</div>
+    </custom>
+</div>
+
+<script>
+    Vue.component("custom",{
+        template:`
+            <div>
+            <slot name="one"><p>第1个提醒</p></slot>
+            <slot name="two"><p>第2个提醒</p></slot>
+            <slot name="three"><p>第3个提醒</p></slot>
+
+</div>
+                `
+    })
+    new Vue({
+        el:"#app"
+    })
+</script>
+
+</body>
+</html>
