@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js</title>
+
+    <style>
+        .yellow{
+            width:300px;
+            color:yellow;
+            background: red;
+            border:10px solid #CCC;
+        }
+        .red{
+            width:300px;
+            color:red;
+            background: yellow;
+            border:10px solid #CCC;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+            var oBtn3 = document.getElementById('btn3');
+            var oBtn4 = document.getElementById('btn4');
+            var oP = document.getElementById('p1');
+
+            var num = 16;
+            oBtn1.onclick = function () {
+
+                num++;
+                oP.style.fontSize = num +'px';
+            }
+
+            oBtn2.onclick = function () {
+
+                num--;
+                oP.style.fontSize = num +'px';
+            }
+
+            oBtn3.onclick = function () {
+                oP.className = 'yellow';
+            }
+
+            oBtn4.onclick = function () {
+                oP.className = 'red';
+            }
+        }
+    </script>
+</head>
+<body>
+
+<input id="btn1" type="button" value="+" />
+<input id="btn2" type="button" value="-" />
+<input id="btn3" type="button" value="黄" />
+<input id="btn4" type="button" value="红" />
+<p id="p1">
+    愿你可以但这最微薄的行李和最丰盛的自己，在时间流浪。愿你可以但这最微薄的行李和最丰盛的自己，在时间流浪。
+    愿你可以但这最微薄的行李和最丰盛的自己，在时间流浪。愿你可以但这最微薄的行李和最丰盛的自己，在时间流浪。
+    愿你可以但这最微薄的行李和最丰盛的自己，在时间流浪。愿你可以但这最微薄的行李和最丰盛的自己，在时间流浪。
+</p>
+</body>
+</html>
