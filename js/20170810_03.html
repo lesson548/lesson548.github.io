@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性操作</title>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            background: #F1F1F1;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oInput = document.getElementById('input1');
+            var oInput2 = document.getElementById('input2');
+            var oBtn = document.getElementById('button1');
+            var oDiv = document.getElementById('div1');
+
+            oBtn.onclick = function () {
+                oDiv.style[oInput.value] = oInput2.value;    //[]可以代替点“.”
+            }
+        }
+    </script>
+
+</head>
+<body>
+请输入属性名：<input id="input1" type="text" value=""/><br />
+请输入属性值：<input id="input2" type="text" value=""/><br />
+<input id="button1" type="button" value="确定"/>
+<div id="div1"></div>
+</body>
+</html>
