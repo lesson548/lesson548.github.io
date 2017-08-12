@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chat-arr</title>
+
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        #all{
+            width:300px;
+            height:500px;
+            margin:30px auto;
+            background: #a1b2df;
+            border-radius:20px;
+            border:1px solid #FFF;
+        }
+        #screen{
+            width:260px;
+            height:400px;
+            background: #d7d9ff;
+            margin:20px auto;
+        }
+        img{
+            width:30px;
+            height:30px;
+            background:#00cc66;
+            margin-left:20px;
+        }
+        #input1{
+            width:175px;
+            height:20px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+
+            var oImg = document.getElementById('img1');
+            var oAll = document.getElementById('all');
+            var oText = document.getElementById('input1');
+            var oBtn = document.getElementById('button1');
+            var oScreen = document.getElementById('screen');
+
+            var arrUrl = ['img/111.jpg','img/222.jpg'];
+            oImg.src = arrUrl[0];
+            var num = 0;
+                oImg.onclick =function () {
+                    if(num == 0){
+                        oImg.src = arrUrl[num+1];
+                        num++;
+                    }
+                    else if(num == 1){
+                        oImg.src = arrUrl[num-1];
+                        num--;
+                    }
+            };
+            //输入聊天框内容
+//            var arrText = [];
+            oBtn.onclick = function () {
+                var img = document.createElement('img');
+                img.src = oImg.src;
+                oScreen.appendChild(img);
+                oScreen.innerHTML = ":" + oText.value; //添加图片：input内容
+//                oAll.innerHTML = arrText;
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+<div id="all">
+    <div id="screen"></div>
+    <img id="img1"/>
+    <input id="input1" type="text" />
+    <input id="button1" type="button" value="发送" />
+</div>
+
+</body>
+</html>
