@@ -22,6 +22,7 @@
             height:400px;
             background: #d7d9ff;
             margin:20px auto;
+            overflow:auto;
         }
         img{
             width:30px;
@@ -58,7 +59,7 @@
                     }
             };
             //输入聊天框内容
-//            var arrText = [];
+
             oBtn.onclick = function () {
                 var img = document.createElement('img');
                 var span = document.createElement('span');
@@ -66,11 +67,17 @@
                 img.src = oImg.src;
                 span.innerHTML = oText.value;
 //                console.log(oImg.src);
-                oScreen.appendChild(img );
-                oScreen.appendChild(span );
-                oScreen.appendChild(br );
+//                oScreen.appendChild(img );
+//                oScreen.appendChild(span );
+//                oScreen.appendChild(br );
 //                oScreen.innerHTML = ":" + oText.value; //添加图片：input内容
-//                oAll.innerHTML = arrText;
+
+                var arrText = [];
+                arrText.unshift(oScreen.appendChild(img) ,oScreen.appendChild(span ) ,oScreen.appendChild(br ) );
+//                oScreen = arrText;
+//                console.log(arrText);
+//                oScreen.innerHTML = arrText;
+//                console.log(arrText);
 
             }
 
