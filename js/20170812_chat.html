@@ -61,9 +61,15 @@
 //            var arrText = [];
             oBtn.onclick = function () {
                 var img = document.createElement('img');
+                var span = document.createElement('span');
+                var br = document.createElement('br');
                 img.src = oImg.src;
-                oScreen.appendChild(img);
-                oScreen.innerHTML = ":" + oText.value; //添加图片：input内容
+                span.innerHTML = oText.value;
+//                console.log(oImg.src);
+                oScreen.appendChild(img );
+                oScreen.appendChild(span );
+                oScreen.appendChild(br );
+//                oScreen.innerHTML = ":" + oText.value; //添加图片：input内容
 //                oAll.innerHTML = arrText;
 
             }
