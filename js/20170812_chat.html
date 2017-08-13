@@ -8,31 +8,118 @@
         body{
             margin:0;
             padding:0;
+            background: #dfdfd3;
         }
         #all{
             width:300px;
-            height:500px;
+            height:530px;
             margin:30px auto;
-            background: #a1b2df;
+            background: #fffccf;
             border-radius:20px;
-            border:1px solid #FFF;
+            border:2px solid #ffcb76;
+            position:relative;
         }
         #screen{
             width:260px;
-            height:400px;
-            background: #d7d9ff;
-            margin:20px auto;
+            height:370px;
+            background: #FFF;
+            /*border:2px solid #9d9d9d;*/
+            box-shadow: 0 0 5px #9d9d9d;
+            margin:50px auto;
             overflow:auto;
+            /*border-radius:5px;*/
+            border-top-left-radius:5px;
+            border-top-right-radius:5px;
+            position:relative;
+            z-index:1;
         }
-        img{
+        #img1{
             width:30px;
             height:30px;
-            background:#00cc66;
-            margin-left:20px;
+            position:absolute;
+            left:10px;
+            top:10px;
         }
+        /*img{*/
+            /*width:30px;*/
+            /*height:30px;*/
+            /*position:absolute;*/
+            /*left:10px;*/
+            /*top:10px;*/
+        /*}*/
         #input1{
-            width:175px;
-            height:20px;
+            width:145px;
+            height:25px;
+            position:absolute;
+            top:10px;
+            left:45px;
+        }
+
+        #button1{
+            width:50px;
+            height:30px;
+            position:absolute;
+            top:10px;
+            right:10px;
+        }
+        #bottom{
+            width:260px;
+            height:50px;
+            background: #d6d8d6;
+            position:absolute;
+            left:20px;
+            top:420px;
+            z-index:2;
+            /*border-radius:5px 0;*/
+            border-bottom-left-radius:5px;
+            border-bottom-right-radius:5px;
+            box-shadow: 0 0 5px #9d9d9d;
+        }
+
+        #home{
+            width:40px;
+            height:40px;
+            background: #fff;
+            position:absolute;
+            bottom:10px;
+            left:130px;
+            border:2px solid #ffcb76;
+            border-radius:20px;
+        }
+        #camera{
+            width:6px;
+            height:6px;
+            background: #000;
+            position:absolute;
+            top:15px;
+            left:145px;
+            border-radius: 3px;
+        }
+        #left{
+            width:10px;
+            height:10px;
+            background: #000;
+            position:absolute;
+            top:28px;
+            left:100px;
+            border-radius: 5px;
+        }
+        #right{
+            width:60px;
+            height:6px;
+            background: #7e7e85;
+            position:absolute;
+            top:30px;
+            left:120px;
+            border-radius: 3px;
+        }
+        .img1{
+            margin:5px;
+            clear:both;
+        }
+        .span1{
+            background: #ffcb76;
+            padding:5px;
         }
     </style>
 
@@ -52,6 +139,7 @@
                     if(num == 0){
                         oImg.src = arrUrl[num+1];
                         num++;
+                        
                     }
                     else if(num == 1){
                         oImg.src = arrUrl[num-1];
@@ -59,26 +147,24 @@
                     }
             };
             //输入聊天框内容
-
+            var arrText = [];
             oBtn.onclick = function () {
+
+                console.log(arrText);
                 var img = document.createElement('img');
-                var span = document.createElement('span');
+                img.setAttribute('class','img1');
+                var span = document.createElement('div');
+                span.setAttribute('class','span1');
                 var br = document.createElement('br');
                 img.src = oImg.src;
                 span.innerHTML = oText.value;
-//                console.log(oImg.src);
-//                oScreen.appendChild(img );
-//                oScreen.appendChild(span );
-//                oScreen.appendChild(br );
-//                oScreen.innerHTML = ":" + oText.value; //添加图片：input内容
 
-                var arrText = [];
-                arrText.unshift(oScreen.appendChild(img) ,oScreen.appendChild(span ) ,oScreen.appendChild(br ) );
-//                oScreen = arrText;
+                arrText.unshift(img ,span ,br );
 //                console.log(arrText);
-//                oScreen.innerHTML = arrText;
-//                console.log(arrText);
-
+                for(var i=0;i<arrText.length;i++){            //appendChild只能接收元素 不能接收数组
+                    oScreen.appendChild(arrText[i]);
+                }
+//                oScreen.appendChild(arrText);
             }
 
         }
@@ -87,10 +173,21 @@
 <body>
 
 <div id="all">
+    <div id="camera"></div>
+    <div id="sound">
+        <div id="left"></div>
+        <div id="right"></div>
+    </div>
     <div id="screen"></div>
-    <img id="img1"/>
-    <input id="input1" type="text" />
-    <input id="button1" type="button" value="发送" />
+    <div id="bottom">
+        <img id="img1"/>
+        <input id="input1" type="text" />
+        <input id="button1" type="button" value="发送" />
+    </div>
+    <div id="home">
+
+    </div>
+
 </div>
 
 </body>
