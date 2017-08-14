@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>QQ列表</title>
+    <style>
+        ul , h2 {
+            padding:0;
+            margin:0;
+        }
+        li {
+            list-style:none;
+        }
+        #list {
+            width:240px;
+            border:1px solid #333;
+            margin:50px auto;
+        }
+        #list .lis {
+            border:1px solid #9d9d9d;
+        }
+        #list h2 {
+            height:30px;
+            line-height:30px;
+            text-indent:20px;
+            background:url(img/ico1.gif) no-repeat 5px center #b8cdff;
+            color: #000;
+            font-size:20px;
+        }
+        #list .active {
+            background:url(img/ico2.gif) no-repeat 5px center #ffdc40;
+            color: #7e7e85;
+        }
+        #list ul {
+            display:none;
+        }
+        #list ul li {
+            line-height:24px;
+            border-bottom:1px solid #333;
+            text-indent:24px;
+        }
+        #list ul :hover {
+            background: #df9dff;
+        }
+    </style>
+    <script>
+        window.onload = function (){
+            var oUl = document.getElementById('list');
+            var aH2 = oUl.getElementsByTagName('h2');
+            var aUl = oUl.getElementsByTagName('ul');
+            var aLi = null;
+            var arrLi = [];
+
+            for( var i=0; i<aH2.length; i++ ){
+                aH2[i].index = i;
+                aH2[i].onclick = function (){
+
+                    for( var i=0; i<aH2.length; i++ ){
+                        if( i != this.index ){
+                            aUl[i].style.display = 'none';
+                            aH2[i].className = '';
+                        }
+                    }
+
+                    if( this.className == '' ){
+                        aUl[this.index].style.display = 'block';
+                        this.className = 'active';
+                    } else {
+                        aUl[this.index].style.display = 'none';
+                        this.className = '';
+                    }
+                };
+            }
+
+            for( var i=0; i<aUl.length; i++ ){
+                aLi = aUl[i].getElementsByTagName('li');
+                for( var j=0; j<aLi.length; j++ ){
+                    arrLi.push( aLi[j] );
+                }
+            }
+
+            for( var i=0; i<arrLi.length; i++ ){
+                arrLi[i].onclick = function (){
+
+                    for( var i=0; i<arrLi.length; i++ ){
+                        if( arrLi[i] !=this ){
+                            arrLi[i].className = '';
+                        }
+                    }
+                    if( this.className == '' ){
+                        this.className = 'hover';
+                    }else{
+                        this.className = '';
+                    }
+                };
+            }
+        };
+    </script>
+</head>
+
+<body>
+
+<ul id="list">
+    <li class="lis">
+        <h2>我的跑友</h2>
+        <ul>
+            <li>罗勇</li>
+            <li>薛军</li>
+            <li>小方</li>
+            <li>老牛</li>
+        </ul>
+    </li>
+    <li class="lis">
+        <h2>企业好友</h2>
+        <ul>
+            <li>王浩</li>
+            <li>小口</li>
+            <li>高飞</li>
+            <li>锋刚</li>
+            <li>曹靖</li>
+        </ul>
+    </li>
+    <li class="lis">
+        <h2>黑名单</h2>
+        <ul>
+            <li>娃哈哈</li>
+            <li>康师傅</li>
+            <li>冰红茶</li>
+        </ul>
+    </li>
+</ul>
+
+</body>
+</html>
