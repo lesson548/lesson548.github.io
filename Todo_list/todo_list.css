@@ -1,0 +1,97 @@
+body{
+    margin:0;
+    padding:0;
+}
+#all{
+    margin:0;
+    width:40%;
+    height:600px;
+    background: #fffccf;
+    border:1px solid #beb3be;
+    position:absolute;
+    left:30%;
+    top:0;
+    box-shadow: 5px 5px #7e7e85;
+}
+#title{
+    margin:0;
+    width:100%;
+    height:50px;
+    background: #ffcb76;
+    text-align:center;
+    position:relative;
+
+}
+#title h2{
+    margin:0;
+    color:#3f59f4;
+    line-height:50px;
+}
+
+#add_list{
+    margin:0;
+    width:100%;
+    height:100px;
+    background: #cfacd5;
+    position:relative;
+}
+h3,input{
+    margin:0;
+}
+#add_list h3{
+    padding:10px 0 10px 20px;
+}
+#add_list input{
+    margin-left:20px;
+    width:70%;
+    height:30px;
+}
+#add_list button{
+    margin-left:10px;
+    width:20%;
+    height:30px;
+}
+
+#count{
+    width:100%;
+    height:50px;
+    background: #c9afff;
+    position:relative;
+}
+p,span{
+    margin:0;
+}
+#count p{
+    line-height:50px;
+    margin-left:20px;
+    color: #aa03d5;
+}
+#list{
+    margin-left:20px;
+}
+
+ul{
+    list-style:none;
+}
+.list_every{
+    width:90%;
+    height:40px;
+    background: #e6ffdb;
+    border:1px solid #beb3be;
+    border-radius:5px;
+}
+.list_every input{
+    width:20px;
+    height:20px;
+    margin-top:10px;
+    margin-left:10px;
+}
+.list_every p{
+    line-height:40px;
+    display:inline;
+}
+.list_every button{
+    float:right;
+    margin-top:10px;
+    margin-right:10px;
+}

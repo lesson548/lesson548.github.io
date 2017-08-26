@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todolist</title>
+    <link href="todo_list.css" rel="stylesheet"/>
+    <script src="../jQuery/jquery-3.1.1.js"></script>
+
+</head>
+<body>
+
+<div id="all">
+    <div id="title">
+        <h2>任务清单</h2>
+    </div>
+
+    <div id="add_list">
+        <h3>添加任务：</h3>
+        <input id="list-input" placeholder="例如：吃饭睡觉打豆豆" type="text"/>
+        <button id="list-button">确认添加</button>
+    </div>
+
+    <div id="count">
+        <p><span id="count-sum">0</span>个任务未完成</p>
+    </div>
+
+    <h3 id="list">任务列表：</h3>
+    <ul id="all-list">
+        <!--<li>-->
+            <!--<div class="list_every">-->
+                <!--<input class="list-check" type="checkbox" />-->
+                <!--<p>吃饭睡觉打豆豆</p>-->
+                <!--<button class="list-delete">删除</button>-->
+            <!--</div>-->
+
+        <!--</li>-->
+    </ul>
+
+</div>
+
+</body>
+<script src="todo_list.js"></script>
+</html>
