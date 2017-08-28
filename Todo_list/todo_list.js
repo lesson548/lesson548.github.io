@@ -24,11 +24,66 @@ $(function () {
    //              $('#count-sum').text(count);
    //      }
    //  });
+//点击选中的checkbox任务恢复
+//     $('ul').on('click',"[class='list-check']",function () {
+//         $(this).next('p').css({"color":"gray","text-decoration":"line-through"});
+//         count--;
+//         $('#count-sum').text(count);
+//     });
+
+    $('ul').on('click',"[class='list-check']",function () {
+        $(this).next('p').css({"color":"gray","text-decoration":"line-through"});
+        count--;
+        $('#count-sum').text(count);
+        // $('ul').on('click',"[class='list-check']",function () {
+        //     $(this).next('p').css({"color":"black","text-decoration":"none"});
+        //     count++;
+        //     $('#count-sum').text(count);
+        //
+        // });
+    });
 
 
 
-    // $('.list-delete').on('click', function() {
+
+
+
+    // $('ul').on('click',"[class='list-check']",function () {
+    //     $(this).toggle(function () {
+    //         $(this).next('p').css({"color":"gray","text-decoration":"line-through"});
+    //         count--;
+    //         $('#count-sum').text(count);
+    //     },function () {
+    //         $(this).next('p').css({"color":"black","text-decoration":"none"});
+    //         count++;
+    //         $('#count-sum').text(count);
+    //     });
+    //
+    // });
+
+
+    // toggle(function () {
+    //             $('ul').click(function (event) {
+    //                 if((event.target.className == "list-check") ){
+    //                     $(event.target).next('p').css({"color":"gray","text-decoration":"line-through"});
+    //                     count--;
+    //                     $('#count-sum').text(count);
+    //                 }
+    //             });
+    //         },function () {
+    //             $('ul').click(function (event) {
+    //                 if((event.target.className == "list-check") ){
+    //                     $(event.target).next('p').css({"color":"black","text-decoration":"none"});
+    //                     count++;
+    //                     $('#count-sum').text(count);
+    //                 }
+    //             });
+    //         });
+
+
+    // $('.list-check').on('click', function() {
     //     if ($(this).attr('checked')) {
+    //         alert(444);
     //         $(this).next('p').css({"color":"gray","text-decoration":"line-through"});
     //         count--;
     //         $('#count-sum').text(count);
@@ -40,8 +95,9 @@ $(function () {
     // });
 
 //点击选中的checkbox任务恢复
-//     $('ul').click(function (event) {
+//       $('ul').click(function (event) {
 //         if((event.target.attr('checked') )){
+//             alert(4444);
 //             $(event.target).next('p').css({"color":"gray","text-decoration":"line-through"});
 //
 //             count--;
